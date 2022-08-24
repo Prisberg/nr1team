@@ -60,7 +60,36 @@ const mainTitle = {
   fontSize: { xs: '2em', md: '3em', lg: '4em', xl: '4em'},
   fontWeight:'bolder',
 }
-
+const skillsBox = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  fontSize: { xs: '', md: '', lg: '2em', xl: '3em'},
+  fontWeight:'bolder',
+  width: { xs: '95%', md: '95%', lg: '95%', xl: '95%'},
+  margin: 'auto',
+  paddingTop:  { xs: '', md: '', lg: '2em', xl: '1em'},
+}
+const skillBox = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'column',
+  cursor: 'pointer',
+  position: 'relative'
+}
+const skillTitle = {
+  paddingBottom: { xs: '', md: '', lg: '.5em', xl: '.5em'},
+  fontSize: '.5em',
+}
+const infoIcon = {
+  position: 'absolute',
+  bottom: {xs: '', md: '', lg: '.5em', xl: '-1.5em'},
+  right: { xs: '', md: '', lg: '.5em', xl: '0em'},
+  fill: '#843626',
+  fontSize: { xs: '', md: '', lg: '2em', xl: '.5em'},
+  transform: 'rotate(180deg)',
+}
 
 
 
