@@ -1,13 +1,13 @@
-import React from 'react'
-import Skills from './skills/Skills';
-import Teams from './teams/Teams';
+import React from 'react';
 import Greeting from './Greeting';
+import Skills from './skills/Skills';
+import Team from './teams/Team';
 
 function Main() {
     return (
         <>
             <Greeting />
-            <Teams />
+            <Team />
             <Skills />
         </>
     )
