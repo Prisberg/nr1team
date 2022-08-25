@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography, Button, Drawer, IconButton } from '@mui/material';
 import FigmaImg from './Skill-imgs/figma.png'
 import UX from './Skill-imgs/UX.png'
 import JS from './Skill-imgs/JS.png'
@@ -10,6 +10,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Pagination, EffectCoverflow } from 'swiper';
 import './Skill-imgs/Skills.css'
 import MoreIcon from '@mui/icons-material/More';
+import CloseIcon from '@mui/icons-material/Close';
+import { styled } from "@mui/system";
+
 // import InfoIcon from '@mui/icons-material/Info';
 
 import 'swiper/css';
@@ -17,6 +20,28 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 function Skills () {
+  const [open, setOpen] = React.useState(false);
+
+
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+  let drawerWidth
+  if (!open) {
+      drawerWidth = '0%'
+  } else {
+      drawerWidth = '100%'
+  }
+  let drawerHeight
+  if (!open) {
+      drawerHeight = '0%'
+  } else {
+      drawerHeight = '100%'
+  }
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
@@ -32,20 +57,48 @@ function Skills () {
             Our Skills 
           </Typography>
         </Box>
-        <Box sx={skillsBox}>
+        <Box sx={skillsBox} >
             {skills.map((item, index) =>(
               <Box  sx={skillBox} key={index}>
                 <Typography sx={skillTitle}>
                  {item.title}
                 </Typography>
                 <img src={item.img} alt={item.title} />
-                <MoreIcon sx={infoIcon} />
+                <MoreIcon sx={infoIcon} onClick={handleDrawerOpen}/>
+
+                <Drawer
+                sx={{
+                position: 'absolute',
+                flexShrink: 0,
+                    '& .MuiDrawer-paper': {
+                    marginTop: '10rem',
+                    marginRight: '20rem',
+                    width: { xs: drawerWidth, sm: '35%', md: '25%', lg: '50%' },
+                    height: { xs: drawerWidth, sm: '60%', md: '70%', lg: '70%' },
+                    backgroundColor: '#EDE6E3',
+                    borderRadius: '20px',
+                    zIndex: '9999',
+                    },
+                }}
+                variant="persistent"
+                anchor="right"
+                open={open}
+                > 
+                 <DrawerHeader>
+                <IconButton >
+                <CloseIcon  onClick={handleDrawerClose} />
+                </IconButton>
+                </DrawerHeader>
+
+                    <Typography>
+                        {item.title}
+                    </Typography>
+                </Drawer>
               </Box>
             ))}
         </Box>
       </Box>
     <Box className='mobileMainBox' sx={skillBoxMobile}>
-   
       <Swiper
         spaceBetween={50}
         initialSlide={0}
@@ -79,12 +132,12 @@ function Skills () {
                 <Box className="skill-info">
                   <h1>{skill.title}</h1>
                 </Box>
-                <Box className='skill-image'>
+                <Box className='skill-image' onClick={handleDrawerOpen}>
                     <img src={skill.img} alt="" />
                 </Box>
                 <a href={skill.url} target="_blank" rel="noreferrer">
                 <Button className='demo-button'>
-                  <MoreIcon sx={infoIcon} />
+                  <MoreIcon sx={infoIcon} onClick={handleDrawerOpen} />
                 </Button>
                 </a>
               </Box>
@@ -146,7 +199,6 @@ const skillBox = {
   alignItems: 'center',
   justifyContent: 'center',
   flexDirection: 'column',
-  cursor: 'pointer',
   position: 'relative'
 }
 const skillTitle = {
@@ -160,16 +212,18 @@ const infoIcon = {
   fill: '#843626',
   fontSize: { xs: '1.5em', md: '', lg: '2em', xl: '.5em'},
   transform: 'rotate(180deg)',
+  cursor: 'pointer',
 }
 const skillBoxMobile = {
-  // position: 'absolute',
   display: {xs: 'block', md: 'none', lg: 'none', xl: 'none'},
-  // right: { xs: '', md: '', lg: '.5em', xl: '0em'},
-  // fill: '#843626',
-  // fontSize: { xs: '', md: '', lg: '2em', xl: '.5em'},
-  // transform: 'rotate(180deg)',
 }
 
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(0, 1),
+  justifyContent: 'flex-start',
+}));
 
 
 const skills = [
