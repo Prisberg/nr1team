@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from "react-router-dom";
 
 const Hamburgermenu = {
   display: "none",
@@ -19,9 +20,16 @@ const Nav = {
   "@media (max-width: 640px)": {
     display: "none",
   },
+  mr: 1,
 };
 
 function NavBar() {
+  const navigate = useNavigate();
+
+  // function scrollIntoView() {
+  //   ref.current.scrollIntoView({ behavior: "smooth" });
+  // }
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -33,10 +41,20 @@ function NavBar() {
             Logo
           </Typography>
           <Box sx={Nav}>
-            <Button color="inherit">Home</Button>
-            <Button color="inherit">About</Button>
-            <Button color="inherit">Team</Button>
-            <Button color="inherit">Contact</Button>
+            <Button color="inherit" onClick={() => navigate("/")}>
+              Home
+            </Button>
+            <Button onClick={() => navigate("/about")} color="inherit">
+              About
+            </Button>
+
+            <Button onClick={() => navigate("/team")} color="inherit">
+              Team
+            </Button>
+
+            <Button onClick={() => navigate("/contact")} color="inherit">
+              Contact
+            </Button>
           </Box>
           <IconButton
             size="large"
