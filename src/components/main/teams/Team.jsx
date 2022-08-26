@@ -2,6 +2,9 @@ import { Box, Button, Typography, Dialog, DialogTitle, DialogContent, DialogCont
 import { useEffect, useState } from 'react';
 import { team } from '../../../assets/teamData';
 import CloseIcon from '@mui/icons-material/Close';
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+
 
 
 function Team() {
@@ -60,11 +63,11 @@ function Team() {
               {selectedDev.about}
             </DialogContentText>
             <DialogActions>
-              <Link>
-                Link
+              <Link target="_blank" href={selectedDev.linkedin}>
+                <LinkedInIcon sx={linkIconStyle} />
               </Link>
-              <Link>
-                Link
+              <Link target="_blank" href={selectedDev.github}>
+                <GitHubIcon sx={linkIconStyle} />
               </Link>
             </DialogActions>
           </DialogContent>
@@ -126,6 +129,12 @@ const avatarStyle = {
   '&:hover': {
     cursor: 'pointer',
   },
+}
+
+const linkIconStyle = {
+  color: '#F06449',
+  height: "40px",
+  width: "40px"
 }
 
 const dialogContentStyle = {
