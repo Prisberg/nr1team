@@ -7,6 +7,10 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+
+const pages = ["Home", "About", "Team", "Contact"];
 
 const Hamburgermenu = {
   display: "none",
@@ -25,10 +29,14 @@ const Nav = {
 
 function NavBar() {
   const navigate = useNavigate();
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  // function scrollIntoView() {
-  //   ref.current.scrollIntoView({ behavior: "smooth" });
-  // }
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -62,9 +70,58 @@ function NavBar() {
             color="inherit"
             aria-label="menu"
             sx={Hamburgermenu}
+            onClick={handleOpenNavMenu}
           >
             <MenuIcon />
           </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{
+              display: { xs: "block", md: "none" },
+            }}
+          >
+            <MenuItem
+              sx={{ display: "flex", flexDirection: "column" }}
+              onClick={handleCloseNavMenu}
+            >
+              <Button
+                color="inherit"
+                onClick={() => navigate("/")}
+                textAlign="center"
+              >
+                {pages[0]}
+              </Button>
+              <Button
+                color="inherit"
+                onClick={() => navigate("/about")}
+                textAlign="center"
+              >
+                {pages[1]}
+              </Button>
+              <Button
+                color="inherit"
+                onClick={() => navigate("/team")}
+                textAlign="center"
+              >
+                {pages[2]}
+              </Button>
+              <Button color="inherit" onClick={() => navigate("/contact")}>
+                {pages[3]}
+              </Button>
+            </MenuItem>
+          </Menu>
         </Toolbar>
       </AppBar>
     </Box>
