@@ -12,7 +12,7 @@ div.contact-bg {
   flex-direction: column;
   background: #f9f7f7;
   border-radius: 20px;
-  width: 1226px;
+  width: 80vw;
   height: 80vh;
 }
 
@@ -29,7 +29,9 @@ button.contact, button.contact:hover {
   border: 2px solid #5bc3eb;
   border-radius: 5px;
   color: black;
+  line-height: 48px;
 }
+
 
 .contact-input {
   width: 400px;
@@ -50,4 +52,21 @@ h1.contact-title {
 
 input[type="text"] {
   font-size: 24px;
+}
+
+@media only screen and (max-width: 640px) {
+  h1.contact-title {
+    font-size: 48px;
+    margin-top: 10px;
+  }
+  div.contact-bg {
+    width: 90vw;
+  }
+  .contact-input {
+    width: 60vw;
+  }
+
+  button.contact {
+    width: 150px;
+  }
 }
