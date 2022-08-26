@@ -9,6 +9,8 @@ import Node from "./main/skills/skills-Info/Node"
 import Mongo from "./main/skills/skills-Info/Mongo" 
 import ReactInfo from "./main/skills/skills-Info/ReactInfo" 
 import UxDesign from "./main/skills/skills-Info/UxDesign" 
+
+import Footer from "./footer/Footer";
 function App() {
   return (
     <div className="App">
@@ -25,8 +27,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<AboutUS />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-    </div >
+    </div>
   );
 }
 
