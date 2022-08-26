@@ -1,6 +1,7 @@
-import { Box, Button, Typography, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, useMediaQuery } from '@mui/material';
+import { Box, Button, Typography, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, useMediaQuery, IconButton, Link } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { team } from '../../../assets/teamData';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 function Team() {
@@ -33,38 +34,40 @@ function Team() {
         {team.map(person => (
           <Box
             key={person.name}
-            sx={singlePersonBox}
-            onClick={() => handleClick(person.name)}>
+            sx={singlePersonBox}>
             <Box
+              onClick={() => handleClick(person.name)}
               component="img"
               sx={avatarStyle}
               alt={person.name}
               src={person.image} />
-            <Typography variant='h5'>{person.name}</Typography>
+            <Typography variant='h6'>{person.name}</Typography>
           </Box>
         ))}
         <Dialog
           open={open}
+          scroll="body"
           onClose={handleClose}
-          aria-labelledby="responsive-dialog-title"
-        >
-          <DialogTitle id="responsive-dialog-title">
-            {selectedDev.name}
-          </DialogTitle>
-          <DialogContent>
+          aria-labelledby="responsive-dialog-title">
+          <IconButton
+            sx={closeButtonStyle}
+            onClick={handleClose}>
+            <CloseIcon />
+          </IconButton>
+          <DialogContent sx={dialogContentStyle}>
             <Box sx={selectedDevImage} component="img" src={selectedDev.image} />
             <DialogContentText>
               {selectedDev.about}
             </DialogContentText>
+            <DialogActions>
+              <Link>
+                Link
+              </Link>
+              <Link>
+                Link
+              </Link>
+            </DialogActions>
           </DialogContent>
-          <DialogActions>
-            <Button autoFocus>
-              Link
-            </Button>
-            <Button autoFocus>
-              Link
-            </Button>
-          </DialogActions>
         </Dialog>
       </Box>
     </Box >
@@ -74,8 +77,9 @@ function Team() {
 export default Team;
 
 const header = {
-  fontSize: '100px',
-  fontWeight: 'bold'
+  fontSize: { xs: '36px', sm: '64px', md: '100px' },
+  fontWeight: 'bold',
+  color: '#1F271B'
 }
 
 const teamBox = {
@@ -92,30 +96,48 @@ const allPersonsBox = {
   alignItems: 'center',
   justifyContent: 'center',
   flexDirection: 'row',
-  gap: '3rem',
+  gap: { xs: '1rem', md: '3rem' },
   flexWrap: 'wrap'
+}
+
+const closeButtonStyle = {
+  right: '0',
+  position: 'absolute',
+  padding: '1rem',
+  color: '#1F271B'
 }
 
 const singlePersonBox = {
   display: 'flex',
   alignItems: 'center',
   flexDirection: 'column',
-  gap: '1rem'
+  gap: '1rem',
 }
 
 const avatarStyle = {
   background: '#1F271B',
   border: 'solid 5px #F06449',
-  width: '200px',
-  height: '200px',
+  width: { xs: '150px', md: '200px' },
+  height: { xs: '150px', md: '200px' },
   objectFit: 'cover',
   borderRadius: '50%',
   textAlign: 'center',
-  color: 'white'
+  color: 'white',
+  '&:hover': {
+    cursor: 'pointer',
+  },
+}
+
+const dialogContentStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '1.5rem'
 }
 
 const selectedDevImage = {
   objectFit: 'cover',
-  width: '400px',
-  height: '400px',
+  width: { xs: '230px', sm: '350px', md: '450px' },
+  height: { xs: '230px', sm: '350px', md: '450px' },
 }
