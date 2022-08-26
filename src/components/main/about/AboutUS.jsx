@@ -6,6 +6,10 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
+import { aboutData } from "../../../assets/aboutData";
 
 const textStyling = {
   mt: "4rem",
@@ -40,10 +44,11 @@ function About() {
       <Box
         sx={{
           m: "5rem",
+          display: "flex",
           justifyContent: "center",
+          flexDirection: "column",
           borderRadius: "8px",
           width: 1200,
-          height: 800,
           backgroundColor: "#F9F7F7",
           flexShrink: 4,
         }}
@@ -67,7 +72,39 @@ function About() {
           specialties in web development. Our main goal is to always deilver a
           product that is tailored to our clients needs and desire.
         </Typography>
-        <Box sx={cardContainer}>
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            m: "1rem",
+            flexDirection: "column",
+          }}
+        >
+          <Typography sx={{ fontWeight: "medium", mt: "2rem" }} variant="h6">
+            Clients
+          </Typography>
+          <ImageList sx={{ width: 800 }}>
+            {aboutData.map((item) => (
+              <ImageListItem key={item.img}>
+                <img
+                  src={`${item.img}?w=248&fit=crop&auto=format`}
+                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                  alt={item.title}
+                  loading="lazy"
+                  style={{
+                    borderRadius: "7px",
+                    objectFit: "true",
+                    maxHeight: "30rem",
+                  }}
+                />
+                <ImageListItemBar title={item.title} position="below" />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </Box>
+        {/* <Box sx={cardContainer}>
           <Card sx={cardStyling}>
             <CardContent>Bild</CardContent>
           </Card>
@@ -80,7 +117,7 @@ function About() {
           <Card sx={cardStyling}>
             <CardContent>bild</CardContent>
           </Card>
-        </Box>
+        </Box> */}
       </Box>
     </Container>
   );
