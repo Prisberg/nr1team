@@ -25,7 +25,7 @@ function App() {
           <Route path="/ReactInfo" element={<ReactInfo />} />
           <Route path="/UxDesign" element={<UxDesign />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<AboutUS />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </BrowserRouter>
