@@ -8,7 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 
 const textStyling = {
-  m: "2rem",
+  m: "3rem",
 };
 
 const cardContainer = {
@@ -21,7 +21,7 @@ const cardContainer = {
 const cardStyling = {
   minWidth: 200,
   minHeight: 200,
-  m: "3rem",
+  m: "2rem",
 };
 
 function Skillsinfo() {
@@ -42,6 +42,7 @@ function Skillsinfo() {
           width: 1200,
           height: 800,
           backgroundColor: "#F9F7F7",
+          flexGrow: 1,
         }}
       >
         <Typography sx={textStyling} variant="h3">
