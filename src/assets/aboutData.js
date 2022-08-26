@@ -1,6 +1,7 @@
 import volvo from "./images/volvo.png";
 import medieinstitutet from "./images/medieinstitutet.png";
 import apple from "./images/apple.png";
+import poc from "./images/poc.png";
 
 export const aboutData = [
   {
@@ -9,8 +10,8 @@ export const aboutData = [
   },
 
   {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Camera",
+    img: `${poc}`,
+    title: "Poc",
   },
   {
     img: `${apple}`,

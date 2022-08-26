@@ -82,10 +82,10 @@ function About() {
             flexDirection: "column",
           }}
         >
-          <Typography sx={{ fontWeight: "medium", mt: "2rem" }} variant="h6">
+          {/* <Typography sx={{ fontWeight: "medium", mt: "2rem" }} variant="h6">
             Clients
-          </Typography>
-          <ImageList sx={{ width: 800 }}>
+          </Typography> */}
+          <ImageList sx={{ width: 800, mt: "3rem", mb: "3rem" }}>
             {aboutData.map((item) => (
               <ImageListItem key={item.img}>
                 <img
@@ -95,8 +95,8 @@ function About() {
                   loading="lazy"
                   style={{
                     borderRadius: "7px",
-                    objectFit: "true",
-                    maxHeight: "30rem",
+                    maxHeight: "296px",
+                    maxWidth: "30rem",
                   }}
                 />
                 <ImageListItemBar title={item.title} position="below" />
