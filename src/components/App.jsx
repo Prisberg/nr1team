@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./main/Main";
 import NavBar from "./header/NavBar";
 import Contact from "./main/contact/Contact"
-import AboutUS from "./main/about/AboutUS"
+import About from "./main/about/About"
 import JavaScript from "./main/skills/skills-Info/JavaScript"
 import Figma from "./main/skills/skills-Info/Figma" 
 import Node from "./main/skills/skills-Info/Node" 
