@@ -1,4 +1,19 @@
 .skillBox img {
   width: 350px;
   height: 275px;
+  border-radius: 2em;
+}
+
+@media (max-width: 420px) {
+  .skillBox img {
+    width: 200px;
+    height: 175px;
+    border-radius: 2em;
+  }
+}
+
+@media (max-width: 320px) {
+  .main-Box .skillProjects {
+    width: 300px;
+  }
 }

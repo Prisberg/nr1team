@@ -46,11 +46,11 @@ function JavaScript () {
     justifyContent: 'center',
   }
   const innerBox = {
-    width:{ xs: '100%', md: '100%', lg: '1226px', xl: '70%'},
+    width:{ xs: '50%', md: '100%', lg: '1226px', xl: '70%'},
     height:{ xs: '100%', md: '100%', llg: '100%', xl: '1350px'},
     padding: '2em',
     backgroundColor: '#F9F7F7',
-    paddingLeft: '15em',
+    paddingLeft: { xs: '0em', md: '15em', llg: '15em', xl: '15em'},
     // borderRadius: '2em',
   }
   const skillProjects = {
