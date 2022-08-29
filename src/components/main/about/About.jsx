@@ -13,7 +13,7 @@ import { aboutData } from "../../../assets/aboutData";
 
 const textStyling = {
   mt: "4rem",
-  ml: "6rem",
+  ml: "4rem",
   fontWeight: "regular",
 };
 
@@ -59,7 +59,7 @@ function About() {
             About us
           </Typography>
           <Typography
-            sx={{ ml: "4rem", mt: "2.5rem", mr: "4rem", fontWeight: "medium" }}
+            sx={{ ml: "4rem", mt: "2.2rem", mr: "4rem", fontWeight: "medium" }}
             variant="h6"
           >
             Creative team core with a strong connection in the industry
@@ -98,7 +98,7 @@ function About() {
                   loading="lazy"
                   style={{
                     borderRadius: "7px",
-                    // margin: "1rem",
+                    margin: "1rem",
                     maxWidth: "20rem",
                   }}
                 />
