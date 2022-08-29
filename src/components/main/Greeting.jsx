@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, CardMedia, Typography } from "@mui/material";
 import React from "react";
 import Logotype from "../../assets/images/NR1TEAM.png";
 
@@ -15,15 +15,10 @@ function Greeting() {
           pb: "8rem",
         }}
       >
-        <Box
-          sx={{
-            backgroundImage: `url(${Logotype})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            minHeight: "150px",
-            width: "100%",
-          }}
-        ></Box>
+        <Box>
+          <img src={Logotype} style={{ maxWidth: "100%", height: "auto" }} />
+        </Box>
+
         <Typography variant="h4">For smart web designs</Typography>
       </Box>
     </Box>
