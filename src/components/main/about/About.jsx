@@ -13,22 +13,8 @@ import { aboutData } from "../../../assets/aboutData";
 
 const textStyling = {
   mt: "4rem",
-  ml: "6rem",
+  ml: "4rem",
   fontWeight: "regular",
-};
-
-const cardContainer = {
-  display: "flex",
-  justifyContent: "center",
-  flexDirection: "row",
-  height: "500",
-  mt: "4rem",
-};
-
-const cardStyling = {
-  minWidth: 200,
-  minHeight: 200,
-  m: "2rem",
 };
 
 function About() {
@@ -38,41 +24,44 @@ function About() {
         display: "flex",
         justifyContent: "center",
         backgroundColor: "#EDE6E3",
+        color: "#1F271B",
       }}
       maxWidth=""
     >
       <Box
         sx={{
-          m: "5rem",
+          mt: "2rem",
+          mb: "2rem",
           display: "flex",
-          justifyContent: "center",
+          alignItems: "center",
           flexDirection: "column",
           borderRadius: "8px",
-          width: 1200,
+          width: "100rem",
           backgroundColor: "#F9F7F7",
-          flexShrink: 4,
+          flexShrink: 1,
         }}
       >
-        <Typography sx={textStyling} variant="h4">
-          About us
-        </Typography>
-        <Typography
-          sx={{ ml: "6rem", mt: "2.5rem", fontWeight: "medium" }}
-          variant="h6"
-        >
-          Creative team core with a strong connection in the industry
-        </Typography>
-        <Typography
-          sx={{ mt: "0.5rem", ml: "6rem", mr: "6rem", flexShrink: "1" }}
-        >
-          We work simply and without prestige with full focus on delivering
-          solutions that have an effect. We know that in today's world our
-          clients need flexibile solutions. That is why our team always works
-          agile according to the scrum method. Our team have broad knowledge and
-          specialties in web development. Our main goal is to always deilver a
-          product that is tailored to our clients needs and desire.
-        </Typography>
-
+        <Box sx={{ maxWidth: "65rem" }}>
+          <Typography sx={textStyling} variant="h4">
+            About us
+          </Typography>
+          <Typography
+            sx={{ ml: "4rem", mt: "2.2rem", mr: "4rem", fontWeight: "medium" }}
+            variant="h6"
+          >
+            Creative team core with a strong connection in the industry
+          </Typography>
+          <Typography
+            sx={{ mt: "0.5rem", ml: "4rem", mr: "4rem", flexShrink: "1" }}
+          >
+            We work simply and without prestige with full focus on delivering
+            solutions that have an effect. We know that in today's world our
+            clients need flexibile solutions. That is why our team always works
+            agile according to the scrum method. Our team have broad knowledge
+            and specialties in web development. Our main goal is to always
+            deilver a product that is tailored to our clients needs and desire.
+          </Typography>
+        </Box>
         <Box
           sx={{
             display: "flex",
@@ -80,12 +69,13 @@ function About() {
             alignItems: "center",
             m: "1rem",
             flexDirection: "column",
+            flexWrap: "wrap",
           }}
         >
           {/* <Typography sx={{ fontWeight: "medium", mt: "2rem" }} variant="h6">
             Clients
           </Typography> */}
-          <ImageList sx={{ width: 800, mt: "3rem", mb: "3rem" }}>
+          <ImageList sx={{ m: "3rem" }}>
             {aboutData.map((item) => (
               <ImageListItem key={item.img}>
                 <img
@@ -95,8 +85,8 @@ function About() {
                   loading="lazy"
                   style={{
                     borderRadius: "7px",
-                    maxHeight: "296px",
-                    maxWidth: "30rem",
+                    margin: "1rem",
+                    maxWidth: "20rem",
                   }}
                 />
                 <ImageListItemBar title={item.title} position="below" />
@@ -104,20 +94,6 @@ function About() {
             ))}
           </ImageList>
         </Box>
-        {/* <Box sx={cardContainer}>
-          <Card sx={cardStyling}>
-            <CardContent>Bild</CardContent>
-          </Card>
-          <Card sx={cardStyling}>
-            <CardContent>bild</CardContent>
-          </Card>
-          <Card sx={cardStyling}>
-            <CardContent>bild</CardContent>
-          </Card>
-          <Card sx={cardStyling}>
-            <CardContent>bild</CardContent>
-          </Card>
-        </Box> */}
       </Box>
     </Container>
   );
