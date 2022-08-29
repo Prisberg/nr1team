@@ -49,8 +49,8 @@ export const team = [
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-    github: "",
-    linkedin: "",
+      github: 'https://github.com/matsegard',
+      linkedin: 'https://www.linkedin.com/in/erik-matseg%C3%A5rd-716a11220/'
   },
 
   {

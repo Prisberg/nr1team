@@ -1,6 +1,6 @@
 import { Box, Button, Typography, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, useMediaQuery, IconButton, Link } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { team } from '../../../assets/teamData';
+import { team } from '../../../../assets/teamData';
 import CloseIcon from '@mui/icons-material/Close';
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
