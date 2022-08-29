@@ -16,42 +16,12 @@ div.contact-bg {
   height: 80vh;
 }
 
-div.button-wrapper {
-  margin-top: 60px;
-}
-
-button.contact, button.contact:hover {
-  width: 200px;
-  margin-bottom: 100px;
-  font-size: 40px;
-  padding: 5px;
-  background: #ffffff;
-  border: 2px solid #5bc3eb;
-  border-radius: 5px;
-  color: black;
-  line-height: 48px;
-}
-
-
-.contact-input {
-  width: 400px;
-  border-radius: 8px;
-  margin-top: 40px;
-  background: #ffffff;
-  border: 2px solid #5bc3eb;
-  border-radius: 8px;
-}
-
 h1.contact-title {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 64px;
   color: #000000;
-}
-
-input[type="text"] {
-  font-size: 24px;
 }
 
 @media only screen and (max-width: 640px) {
@@ -69,4 +39,28 @@ input[type="text"] {
   button.contact {
     width: 150px;
   }
+}
+
+.contact-label {
+  margin-top: 10px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+}
+
+.input {
+  margin-top: 20px;
+}
+
+.button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.css-oh0jw6-MuiButtonBase-root-MuiButton-root {
+  width: 400px;
 }
