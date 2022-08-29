@@ -10,6 +10,7 @@ import Mongo from "./main/skills/skills-Info/Mongo";
 import ReactInfo from "./main/skills/skills-Info/ReactInfo";
 import UxDesign from "./main/skills/skills-Info/UxDesign";
 
+
 import Footer from "./footer/Footer";
 function App() {
   return (
