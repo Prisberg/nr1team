@@ -17,20 +17,6 @@ const textStyling = {
   fontWeight: "regular",
 };
 
-const cardContainer = {
-  display: "flex",
-  justifyContent: "center",
-  flexDirection: "row",
-  height: "500",
-  mt: "4rem",
-};
-
-const cardStyling = {
-  minWidth: 200,
-  minHeight: 200,
-  m: "2rem",
-};
-
 function About() {
   return (
     <Container
@@ -44,12 +30,13 @@ function About() {
     >
       <Box
         sx={{
-          m: "5rem",
+          mt: "2rem",
+          mb: "2rem",
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
           borderRadius: "8px",
-          width: "80rem",
+          width: "100rem",
           backgroundColor: "#F9F7F7",
           flexShrink: 1,
         }}
@@ -88,7 +75,7 @@ function About() {
           {/* <Typography sx={{ fontWeight: "medium", mt: "2rem" }} variant="h6">
             Clients
           </Typography> */}
-          <ImageList sx={{ mt: "3rem", mb: "3rem" }}>
+          <ImageList sx={{ m: "3rem" }}>
             {aboutData.map((item) => (
               <ImageListItem key={item.img}>
                 <img
@@ -107,20 +94,6 @@ function About() {
             ))}
           </ImageList>
         </Box>
-        {/* <Box sx={cardContainer}>
-          <Card sx={cardStyling}>
-            <CardContent>Bild</CardContent>
-          </Card>
-          <Card sx={cardStyling}>
-            <CardContent>bild</CardContent>
-          </Card>
-          <Card sx={cardStyling}>
-            <CardContent>bild</CardContent>
-          </Card>
-          <Card sx={cardStyling}>
-            <CardContent>bild</CardContent>
-          </Card>
-        </Box> */}
       </Box>
     </Container>
   );
