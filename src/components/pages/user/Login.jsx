@@ -1,5 +1,5 @@
 import { Box, Button, Link, TextField, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { usePortfolioContext } from "../../../utils/PortfolioContext";
 
 function Login() {
@@ -11,11 +11,15 @@ function Login() {
         e.preventDefault();
         console.log(email + ' ' + password);
         console.log(emailState + ' ' + passwordState);
+        
         //compare input to email and password
         if (email === emailState && password === passwordState) {
             console.log('logged in success');
+            //navigate to main page
+            //display confirmation of successfull login
         } else {
             console.log("who the f r u");
+            //display confirmation of failed login
         }
     }
 
