@@ -12,15 +12,16 @@ import {  Pagination, EffectCoverflow } from 'swiper';
 import MoreIcon from '@mui/icons-material/More';
 
 
-import './Skills.css'
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "./Skills.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 
 
 function Skills () {
   
+
 
   const pagination = {
     clickable: true,
@@ -31,73 +32,54 @@ function Skills () {
 
   return (
     <Box sx={mainBox}>
-      <Box sx={innerBox} >
+      <Box sx={innerBox}>
         <Box>
-          <Typography sx={mainTitle}>
-            Our Skills 
-          </Typography>
+          <Typography sx={mainTitle}>Our Skills</Typography>
         </Box>
-        <Box sx={skillsBox} >
-          <Box  sx={skillBox} >
-                <Typography sx={skillTitle}>
-                 Figma
-                </Typography>
-                <img src={FigmaImg} alt='FigmaImg' />
-                <Link to='/Figma'>
-                <MoreIcon sx={infoIcon} />
-                </Link>
-                
-              </Box>
-              <Box  sx={skillBox}>
-                <Typography sx={skillTitle}>
-                 UX Design
-                 </Typography>
-                <img src={UX} alt='UX Design' />
-                <Link to='/UxDesign'>
-                <MoreIcon sx={infoIcon} />
-                </Link>
-                
-              </Box>
-              <Box  sx={skillBox}>
-                <Typography sx={skillTitle}>
-                 JavaScript
-                </Typography>
-                <img src={JS} alt='JavaScript' />
-                <Link to='/JavaScript'>
-                <MoreIcon sx={infoIcon} />
-                </Link>
-                
-              </Box>
-              <Box  sx={skillBox}>
-                <Typography sx={skillTitle}>
-                React
-                </Typography>
-                <img src={ReactImg} alt='React'/>
-                <Link to='/ReactInfo'>
-                <MoreIcon sx={infoIcon} />
-                </Link>
-                
-              </Box>
-              <Box  sx={skillBox}>
-                <Typography sx={skillTitle}>
-                nodJS
-                </Typography>
-                <img src={node} alt='nodJS' />
-                <Link to='/Node'>
-                <MoreIcon sx={infoIcon} />
-                </Link>
-                
-              </Box>
-              <Box  sx={skillBox}>
-                <Typography sx={skillTitle}>
-                MongoDB
-                </Typography>
-                <img src={Mongo} alt='MongoDB' />
-                <Link to='/Mongo'>
-                <MoreIcon sx={infoIcon} />
-                </Link>
-              </Box>
-            {/* {skills.map((item, index) =>(
+        <Box sx={skillsBox}>
+          <Box sx={skillBox}>
+            <Typography sx={skillTitle}>Figma</Typography>
+            <img src={FigmaImg} alt="FigmaImg" />
+            <Link to="/Figma">
+              <MoreIcon sx={infoIcon} />
+            </Link>
+          </Box>
+          <Box sx={skillBox}>
+            <Typography sx={skillTitle}>UX Design</Typography>
+            <img src={UX} alt="UX Design" />
+            <Link to="/UxDesign">
+              <MoreIcon sx={infoIcon} />
+            </Link>
+          </Box>
+          <Box sx={skillBox}>
+            <Typography sx={skillTitle}>JavaScript</Typography>
+            <img src={JS} alt="JavaScript" />
+            <Link to="/JavaScript">
+              <MoreIcon sx={infoIcon} />
+            </Link>
+          </Box>
+          <Box sx={skillBox}>
+            <Typography sx={skillTitle}>React</Typography>
+            <img src={ReactImg} alt="React" />
+            <Link to="/ReactInfo">
+              <MoreIcon sx={infoIcon} />
+            </Link>
+          </Box>
+          <Box sx={skillBox}>
+            <Typography sx={skillTitle}>nodeJS</Typography>
+            <img src={node} alt="nodJS" />
+            <Link to="/Node">
+              <MoreIcon sx={infoIcon} />
+            </Link>
+          </Box>
+          <Box sx={skillBox}>
+            <Typography sx={skillTitle}>MongoDB</Typography>
+            <img src={Mongo} alt="MongoDB" />
+            <Link to="/Mongo">
+              <MoreIcon sx={infoIcon} />
+            </Link>
+          </Box>
+          {/* {skills.map((item, index) =>(
               <Box  sx={skillBox}>
                 <Typography sx={skillTitle}>
                  {item.title}
@@ -111,61 +93,54 @@ function Skills () {
             ))} */}
         </Box>
       </Box>
-    <Box className='mobileMainBox' sx={skillBoxMobile}>
-      <Swiper
-        spaceBetween={50}
-        initialSlide={0}
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={"auto"}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={pagination}
-        modules={[EffectCoverflow, Pagination]}
-        className='slide'
+      <Box className="mobileMainBox" sx={skillBoxMobile}>
+        <Swiper
+          spaceBetween={50}
+          initialSlide={0}
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          pagination={pagination}
+          modules={[EffectCoverflow, Pagination]}
+          className="slide"
         >
-        
-          {skills.map( skill => ( 
-            <SwiperSlide 
-              key={skill.id}
-              className='slider'
-            >
-                <Box>
-                <Typography sx={mainTitleMobile}>
-                  Our Skills 
-                </Typography>
+          {skills.map((skill) => (
+            <SwiperSlide key={skill.id} className="slider">
+              <Box>
+                <Typography sx={mainTitleMobile}>Our Skills</Typography>
               </Box>
-              <Box >
+              <Box>
                 <Box className="skill-info">
                   <h1>{skill.title}</h1>
                 </Box>
-                <Box className='skill-image' >
-                    <img src={skill.img} alt="" />
+                <Box className="skill-image">
+                  <img src={skill.img} alt="" />
                 </Box>
-                <a href={skill.url}  rel="noreferrer">
-                <Button className='demo-button'>
-                  <MoreIcon sx={infoIcon}  />
-                </Button>
+
+                <a href={skill.url} target="_blank" rel="noreferrer">
+                  <Button className="demo-button">
+                    <MoreIcon sx={infoIcon} />
+                  </Button>
+
                 </a>
               </Box>
-              
             </SwiperSlide>
           ))}
-      </Swiper>
-
+        </Swiper>
       </Box>
     </Box>
-  )
+  );
 }
 
 export default Skills;
-
 
 const mainBox = {
   display: 'flex',
@@ -189,14 +164,15 @@ const mainTitle = {
   fontSize: { xs: '2em', md: '3em', lg: '4em', xl: '4em'},
   fontWeight:'bolder',
 }
+
 const mainTitleMobile = {
-  position: 'absolute',
+  position: "absolute",
   top: `1em`,
-  left: '50%',
-  fontWeight:'bolder',
-  transform: 'translateX(-50%)',
-  fontSize: { xs: '2em', md: '3em', lg: '4em', xl: '4em'},
-}
+  left: "50%",
+  fontWeight: "bolder",
+  transform: "translateX(-50%)",
+  fontSize: { xs: "2em", md: "3em", lg: "4em", xl: "4em" },
+};
 const skillsBox = {
   display: 'flex',
   alignItems: 'center',
@@ -207,13 +183,14 @@ const skillsBox = {
   margin: 'auto',
   paddingTop:  { xs: '', md: '1em', lg: '1em', xl: '1em'},
 }
+
 const skillBox = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  flexDirection: 'column',
-  position: 'relative'
-}
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column",
+  position: "relative",
+};
 const skillTitle = {
   paddingBottom: { xs: '0.5em', md: '1em', lg: '.5em', xl: '.5em'},
   fontSize: { xs: '1em', md: '1em', lg: '0.5em', xl: '0.5em'},
@@ -241,7 +218,7 @@ const skills = [
     url: '/Figma'
   },
   {
-    id: '2',
+    id: "2",
     img: `${UX}`,
     title: 'UX Design',
     url: '/UxDesign'
@@ -253,22 +230,24 @@ const skills = [
     url: '/JavaScript'
   },
   {
-    id: '4',
+    id: "4",
     img: `${ReactImg}`,
     title: 'React',
     url: '/ReactInfo'
+
   },
   {
-    id: '5',
+    id: "5",
     img: `${node}`,
     title: 'nodJS',
     url: '/Node'
+
   },
   {
-    id: '6',
+    id: "6",
     img: `${Mongo}`,
     title: 'MongoDB',
     url: '/Mongo'
+
   },
-  
 ];
