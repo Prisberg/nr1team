@@ -8,7 +8,7 @@ function Login() {
             autoComplete="off"
             /* onSubmit={handleSubmit} */>
             <Box sx={loginMainBox}>
-                <Typography sx={header} variant='h3'>Log in</Typography>
+                <Typography sx={header} variant='h3'>Log In</Typography>
                 <Box sx={loginSecondBox}>
                     <TextField
                         /* onChange={handleInputValue} */
@@ -32,7 +32,7 @@ function Login() {
                         variant="contained"
                         type="submit"
                     >
-                        Log in
+                        Log In
                     </Button>
                     <Typography>Don't have an account? <Link href="/register">Create account.</Link></Typography>
                 </Box>
