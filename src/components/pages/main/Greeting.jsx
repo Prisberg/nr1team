@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import Logotype from "../../assets/images/NR1TEAM.png";
+import Logotype from "../../../assets/images/NR1TEAM.png";
 
 function Greeting() {
   return (
