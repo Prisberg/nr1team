@@ -114,15 +114,15 @@ function NavBar() {
               </Button>
               <Button
                 color="inherit"
-                onClick={() => navigate("/team")}
+                onClick={() => navigate("/cases")}
                 textAlign="center"
               >
                 {pages[2]}
               </Button>
-              <Button color="inherit" onClick={() => navigate("/contact")}>
+              <Button color="inherit" onClick={() => navigate("/team")}>
                 {pages[3]}
               </Button>
-              <Button color="inherit" onClick={() => navigate("/cases")}>
+              <Button color="inherit" onClick={() => navigate("/contact")}>
                 {pages[4]}
               </Button>
             </MenuItem>

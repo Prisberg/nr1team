@@ -11,6 +11,7 @@ import About from "./pages/about/About";
 import Cases from "./pages/cases/Cases";
 import Footer from "./footer/Footer";
 import Main from "./pages/main/Main";
+import Team from "./pages/main/teams/Team";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/cases" element={<Cases />} />
+          <Route path="/team" element={<Team />} />
         </Routes>
         <Footer />
       </BrowserRouter>

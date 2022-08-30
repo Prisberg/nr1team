@@ -30,10 +30,11 @@ function About() {
     >
       <Box
         sx={{
-          mt: "2rem",
+          mt: "4rem",
           mb: "2rem",
           display: "flex",
           alignItems: "center",
+          justifyContent: "center",
           flexDirection: "column",
           borderRadius: "8px",
           width: "100rem",
@@ -41,7 +42,15 @@ function About() {
           flexShrink: 1,
         }}
       >
-        <Box sx={{ maxWidth: "65rem" }}>
+        <Box
+          sx={{
+            maxWidth: "65rem",
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            mt: "6rem",
+          }}
+        >
           <Typography sx={textStyling} variant="h4">
             About us
           </Typography>
@@ -52,7 +61,14 @@ function About() {
             Creative team core with a strong connection in the industry
           </Typography>
           <Typography
-            sx={{ mt: "0.5rem", ml: "4rem", mr: "4rem", flexShrink: "1" }}
+            sx={{
+              mt: "0.8rem",
+              ml: "4rem",
+              mr: "4rem",
+              mb: "5rem",
+              flexShrink: "1",
+              height: "20rem",
+            }}
           >
             We work simply and without prestige with full focus on delivering
             solutions that have an effect. We know that in today's world our
@@ -61,38 +77,6 @@ function About() {
             and specialties in web development. Our main goal is to always
             deilver a product that is tailored to our clients needs and desire.
           </Typography>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            m: "1rem",
-            flexDirection: "column",
-            flexWrap: "wrap",
-          }}
-        >
-          {/* <Typography sx={{ fontWeight: "medium", mt: "2rem" }} variant="h6">
-            Clients
-          </Typography> */}
-          <ImageList sx={{ m: "3rem" }}>
-            {aboutData.map((item) => (
-              <ImageListItem key={item.img}>
-                <img
-                  src={`${item.img}?w=248&fit=crop&auto=format`}
-                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                  alt={item.title}
-                  loading="lazy"
-                  style={{
-                    borderRadius: "7px",
-                    margin: "1rem",
-                    maxWidth: "20rem",
-                  }}
-                />
-                <ImageListItemBar title={item.title} position="below" />
-              </ImageListItem>
-            ))}
-          </ImageList>
         </Box>
       </Box>
     </Container>
