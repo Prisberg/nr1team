@@ -1,21 +1,22 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Main from "./main/Main";
-import NavBar from "./header/NavBar";
-import Contact from "./main/contact/Contact"
-import About from "./main/about/About"
-import JavaScript from "./main/skills/skills-Info/JavaScript"
-import Figma from "./main/skills/skills-Info/Figma" 
-import Node from "./main/skills/skills-Info/Node" 
-import Mongo from "./main/skills/skills-Info/Mongo" 
-import ReactInfo from "./main/skills/skills-Info/ReactInfo" 
-import UxDesign from "./main/skills/skills-Info/UxDesign" 
+import Navbar from "./header/NavBar"
+import JavaScript from "./pages/main/skills/skills-Info/JavaScript"
+import Node from "./pages/main/skills/skills-Info/Node"
+import Figma from "./pages/main/skills/skills-Info/Figma"
+import Mongo from "./pages/main/skills/skills-Info/Mongo"
+import ReactInfo from "./pages/main/skills/skills-Info/ReactInfo"
+import UxDesign from "./pages/main/skills/skills-Info/UxDesign"
+import Contact from "./pages/contact/Contact"
+import About from "./pages/about/About"
+
 
 import Footer from "./footer/Footer";
+import Main from "./pages/main/Main";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/JavaScript" element={<JavaScript />} />
