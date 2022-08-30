@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import './skillInfo.css'
 import FigmaImg from '../Skill-imgs/skillTest.png'
 
