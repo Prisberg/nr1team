@@ -3,17 +3,22 @@ div.contact-main {
   justify-content: center;
   align-items: center;
   height: 90vh;
+  margin: 20px;
 }
 
 div.contact-bg {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  text-align: center;
   flex-direction: column;
   background: #f9f7f7;
   border-radius: 20px;
-  width: 80vw;
+  width: 60vw;
   height: 80vh;
+  padding:40px;
+  max-width: 1440px;
+  max-height: 600px;
 }
 
 h1.contact-title {
@@ -22,6 +27,7 @@ h1.contact-title {
   font-weight: 500;
   font-size: 64px;
   color: #000000;
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 640px) {
@@ -29,11 +35,12 @@ h1.contact-title {
     font-size: 48px;
     margin-top: 10px;
   }
+
   div.contact-bg {
+    justify-content: space-around;
     width: 90vw;
-  }
-  .contact-input {
-    width: 60vw;
+    height: 80vh;
+    padding:20px;
   }
 
   button.contact {
@@ -49,18 +56,18 @@ form {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 400px;
+  width: 100%;
 }
 
 .input {
   margin-top: 20px;
+  width:100%;
 }
 
 .button {
   margin-top: 20px;
-  width: 100%;
 }
 
 .css-oh0jw6-MuiButtonBase-root-MuiButton-root {
-  width: 400px;
+  width: 100%;
 }
