@@ -52,9 +52,6 @@ function About() {
             flexWrap: "wrap",
           }}
         >
-          {/* <Typography sx={{ fontWeight: "medium", mt: "2rem" }} variant="h6">
-            Clients
-          </Typography> */}
           <ImageList sx={{ m: "3rem" }}>
             {aboutData.map((item) => (
               <ImageListItem key={item.img}>
