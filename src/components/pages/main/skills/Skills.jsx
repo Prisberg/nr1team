@@ -102,7 +102,7 @@ function Skills () {
               </Box>
               <Box  sx={skillBox}>
                 <Typography sx={skillTitle}>
-                nodJS
+                nodeJS
                 </Typography>
                 <img src={node} alt='nodJS' />
                 <Link to='/Node'>

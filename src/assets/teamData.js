@@ -1,9 +1,8 @@
-
-import philip from "./images/philip.png"
-import erik from "./images/erik.png"
-import hazem from "./images/hazem.jpg"
+import philip from "./images/philip.png";
+import erik from "./images/erik.png";
+import hazem from "./images/hazem.jpg";
 import elin from "./images/elin.png";
-
+import isaaq from "./images/isaaq.jpg";
 
 export const team = [
   {
@@ -29,15 +28,14 @@ export const team = [
   },
 
   {
-    name: 'Hazem Kawas',
+    name: "Hazem Kawas",
     image: `${hazem}`,
     about: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
        Duisaute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-    github: 'https://github.com/hazem-89',
-    linkedin: 'https://www.linkedin.com/in/hazem-kawas-66971b185/'
-
+    github: "https://github.com/hazem-89",
+    linkedin: "https://www.linkedin.com/in/hazem-kawas-66971b185/",
   },
 
   {
@@ -49,18 +47,18 @@ export const team = [
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-      github: 'https://github.com/matsegard',
-      linkedin: 'https://www.linkedin.com/in/erik-matseg%C3%A5rd-716a11220/'
+    github: "https://github.com/matsegard",
+    linkedin: "https://www.linkedin.com/in/erik-matseg%C3%A5rd-716a11220/",
   },
 
   {
     name: "Isaaq Guleed",
-    image: "./images./isaaq.png",
+    image: `${isaaq}`,
     about: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
        Duisaute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-    github: "",
-    linkedin: "",
+    github: "https://rhctect.github.io",
+    linkedin: "https://linkedin.com/in/isaaq-guleed-6a0614239",
   },
 ];
