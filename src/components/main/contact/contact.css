@@ -8,9 +8,8 @@ div.contact-main {
 
 div.contact-bg {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  text-align: center;
   flex-direction: column;
   background: #f9f7f7;
   border-radius: 20px;
@@ -18,7 +17,6 @@ div.contact-bg {
   height: 80vh;
   padding:40px;
   max-width: 1440px;
-  max-height: 600px;
 }
 
 h1.contact-title {
@@ -35,12 +33,11 @@ h1.contact-title {
     font-size: 48px;
     margin-top: 10px;
   }
-
   div.contact-bg {
-    justify-content: space-around;
     width: 90vw;
-    height: 80vh;
-    padding:20px;
+  }
+  .contact-input {
+    width: 60vw;
   }
 
   button.contact {
@@ -69,5 +66,5 @@ form {
 }
 
 .css-oh0jw6-MuiButtonBase-root-MuiButton-root {
-  width: 100%;
+  width: 400px;
 }
