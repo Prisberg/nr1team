@@ -1,31 +1,45 @@
 import { Box, Button, Link, TextField, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import { usePortfolioContext } from "../../../utils/PortfolioContext";
 
 function Login() {
+    const { email, password } = usePortfolioContext();
+    const [emailState, setStateEmail] = useState("");
+    const [passwordState, setStatePassword] = useState("");
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(email + ' ' + password);
+        console.log(emailState + ' ' + passwordState);
+        //compare input to email and password
+        if (email === emailState && password === passwordState) {
+            console.log('logged in success');
+        } else {
+            console.log("who the f r u");
+        }
+    }
 
     return (
         <form
             style={loginForm}
-            autoComplete="off"
-            /* onSubmit={handleSubmit} */>
+            onSubmit={(e) => handleSubmit(e)}>
             <Box sx={loginMainBox}>
                 <Typography sx={header} variant='h3'>Log In</Typography>
                 <Box sx={loginSecondBox}>
                     <TextField
-                        /* onChange={handleInputValue} */
-                        /*   onBlur={handleInputValue} */
+                        onChange={(e) => setStateEmail(e.target.value)}
+                        value={emailState}
                         name="email"
                         label="Email"
                         fullWidth
-                        autoComplete
                         required
                     />
                     <TextField
-                        /* onChange={handleInputValue} */
-                        /*   onBlur={handleInputValue} */
+                        onChange={(e) => setStatePassword(e.target.value)}
+                        value={passwordState}
                         name="password"
                         label="Password"
                         fullWidth
-                        autoComplete
                         required
                     />
                     <Button
