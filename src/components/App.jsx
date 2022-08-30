@@ -8,10 +8,12 @@ import ReactInfo from "./pages/main/skills/skills-Info/ReactInfo"
 import UxDesign from "./pages/main/skills/skills-Info/UxDesign"
 import Contact from "./pages/contact/Contact"
 import About from "./pages/about/About"
-
-
 import Footer from "./footer/Footer";
 import Main from "./pages/main/Main";
+import Login from "./pages/user/Login";
+import Register from "./pages/user/Register";
+
+
 function App() {
   return (
     <div className="App">
@@ -20,7 +22,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/JavaScript" element={<JavaScript />} />
-          <Route path="/Node" element={<Node />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/Node" element={<Node />} />w
           <Route path="/Figma" element={<Figma />} />
           <Route path="/Mongo" element={<Mongo />} />
           <Route path="/ReactInfo" element={<ReactInfo />} />
