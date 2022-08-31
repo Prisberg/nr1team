@@ -4,8 +4,6 @@ import apple from "./images/apple.png";
 import poc from "./images/poc.png";
 import office from "./images/office.jpg";
 import code from "./images/code.jpg";
-import google from "./images/google.jpg";
-import uber from "./images/uber.jpg";
 import swarm from "./images/swarm.jpg";
 import lyft from "./images/lyft.jpg";
 import skype from "./images/skype.jpg";
