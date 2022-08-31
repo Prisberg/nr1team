@@ -2,8 +2,7 @@ import volvo from "./images/volvo.png";
 import design from "./images/design.jpg";
 import apple from "./images/apple.png";
 import poc from "./images/poc.png";
-import office from "./images/office.jpg";
-import code from "./images/code.jpg";
+import photoapp from "./images/photo-app.jpg";
 import swarm from "./images/swarm.jpg";
 import lyft from "./images/lyft.jpg";
 import skype from "./images/skype.jpg";
@@ -27,16 +26,12 @@ export const aboutData = [
     title: "App",
   },
   {
-    img: `${code}`,
-    title: "Project",
-  },
-  {
     img: `${lyft}`,
     title: "Lyft",
   },
   {
-    img: `${office}`,
-    title: "Office",
+    img: `${photoapp}`,
+    title: "Photo app",
   },
   {
     img: `${skype}`,
