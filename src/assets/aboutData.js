@@ -44,6 +44,6 @@ export const aboutData = [
   },
   {
     img: `${swarm}`,
-    title: "App",
+    title: "Swarm",
   },
 ];
