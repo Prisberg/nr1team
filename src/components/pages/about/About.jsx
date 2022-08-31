@@ -2,14 +2,6 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
-import { aboutData } from "../../../assets/aboutData";
 
 const textStyling = {
   mt: "4rem",
@@ -65,7 +57,6 @@ function About() {
               mt: "0.8rem",
               ml: "4rem",
               mr: "4rem",
-              mb: "5rem",
               flexShrink: "1",
               height: "20rem",
             }}

@@ -52,7 +52,7 @@ function About() {
             flexWrap: "wrap",
           }}
         >
-          <ImageList sx={{ m: "3rem" }}>
+          <ImageList gap={10} sx={{ m: "3rem" }}>
             {aboutData.map((item) => (
               <ImageListItem key={item.img}>
                 <img
@@ -62,7 +62,6 @@ function About() {
                   loading="lazy"
                   style={{
                     borderRadius: "7px",
-                    margin: "1rem",
                     maxWidth: "20rem",
                   }}
                 />
