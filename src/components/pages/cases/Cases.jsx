@@ -14,21 +14,21 @@ const textStyling = {
 
 const images = {
   borderRadius: "7px",
-  maxHeight: "25rem",
+  maxHeight: "20rem",
   maxWidth: "40rem",
   objectFit: "cover",
-  "@media (min-width: 480px)": {
-    maxHeight: "10rem",
-    objectFit: "contain",
-  },
+  boxShadow: "1px 2px 1.5px rgba(0, 0, 0, 0.1)",
 };
 
 const imglist = {
-  "@media (max-width: 480px)": {
-    maxHeight: "20rem",
-    maxWidth: "20rem",
-    objectFit: "contain",
-  },
+  // "@media (max-width: 480px)": {
+  //   maxHeight: "23rem",
+  //   maxWidth: "20rem",
+  objectFit: "cover",
+  //   m: "1rem",
+  // },
+  width: { xs: "15rem", sm: "30rem", md: "40rem" },
+  height: { xs: "10rem", sm: "30rem", md: "40rem" },
 };
 
 function Cases() {
@@ -73,7 +73,7 @@ function Cases() {
             },
           }}
         >
-          <ImageList gap={10} cols={1} rowHeight={500} sx={{ m: "0.3rem" }}>
+          <ImageList gap={10} cols={1} rowHeight={400} sx={{ m: "0.3rem" }}>
             {aboutData.map((item) => (
               <ImageListItem sx={imglist} key={item.img}>
                 <img
