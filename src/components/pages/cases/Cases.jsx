@@ -21,14 +21,9 @@ const images = {
 };
 
 const imglist = {
-  // "@media (max-width: 480px)": {
-  //   maxHeight: "23rem",
-  //   maxWidth: "20rem",
   objectFit: "cover",
-  //   m: "1rem",
-  // },
   width: { xs: "17rem", sm: "30rem", md: "40rem" },
-  height: { xs: "10rem", sm: "30rem", md: "40rem" },
+  height: { xs: "10px", sm: "10px", md: "10px" },
 };
 
 function Cases() {
@@ -67,10 +62,6 @@ function Cases() {
             alignItems: "center",
             m: "1rem",
             flexDirection: "column",
-            flexWrap: "wrap",
-            "@media (max-width: 480px)": {
-              maxWidth: "20rem",
-            },
           }}
         >
           <ImageList gap={10} cols={1} rowHeight={400} sx={{ m: "0.3rem" }}>
