@@ -9,6 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { usePortfolioContext } from "../../utils/PortfolioContext";
 
 const pages = ["Home", "About", "Team", "Contact"];
 
@@ -28,6 +29,7 @@ const Nav = {
 };
 
 function NavBar() {
+  const { loggedIn } = usePortfolioContext();
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -63,6 +65,10 @@ function NavBar() {
             <Button onClick={() => navigate("/contact")} color="inherit">
               Contact
             </Button>
+
+            {loggedIn ? null : <Button onClick={() => navigate("/login")} color="inherit">
+              Log in
+            </Button>}
           </Box>
           <IconButton
             size="large"
