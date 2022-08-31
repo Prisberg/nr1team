@@ -12,9 +12,12 @@ import Footer from "./footer/Footer";
 import Main from "./pages/main/Main";
 import Login from "./pages/user/Login";
 import Register from "./pages/user/Register";
+import { usePortfolioContext } from "../utils/PortfolioContext";
 
 
 function App() {
+  const { loggedIn } = usePortfolioContext();
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -22,9 +25,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/JavaScript" element={<JavaScript />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/Node" element={<Node />} />w
+          <Route path="/login" element={loggedIn ? null : <Login />} />
+          <Route path="/register" element={loggedIn ? null : <Register />} />
+          <Route path="/Node" element={<Node />} />
           <Route path="/Figma" element={<Figma />} />
           <Route path="/Mongo" element={<Mongo />} />
           <Route path="/ReactInfo" element={<ReactInfo />} />

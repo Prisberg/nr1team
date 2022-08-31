@@ -5,6 +5,8 @@ export const PortfolioContext = createContext({
     setUsername: () => false,
     password: '',
     setPassword: () => false,
+    loggedIn: false,
+    setLoggedIn: () => false,
     extractLocalStorage: () => false,
 })
 
@@ -13,6 +15,7 @@ export default function PortfolioProvider(props) {
     const [username, setUsername] = useState('');
     // const [lName, setLName] = useState('');
     const [password, setPassword] = useState('');
+    const [loggedIn, setLoggedIn] = useState(false);
 
     function extractLocalStorage() {
         //Function for getting localstorage data. To be used when account created and on first load.
@@ -32,6 +35,8 @@ export default function PortfolioProvider(props) {
                 email,
                 username,
                 password,
+                loggedIn,
+                setLoggedIn,
                 extractLocalStorage
             }}
             {...props} />
