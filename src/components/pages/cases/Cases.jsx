@@ -9,11 +9,29 @@ import { aboutData } from "../../../assets/aboutData";
 
 const textStyling = {
   mt: "4rem",
-  ml: "4rem",
   fontWeight: "regular",
 };
 
-function About() {
+const images = {
+  borderRadius: "7px",
+  maxHeight: "25rem",
+  maxWidth: "40rem",
+  objectFit: "cover",
+  "@media (min-width: 480px)": {
+    maxHeight: "10rem",
+    objectFit: "contain",
+  },
+};
+
+const imglist = {
+  "@media (max-width: 480px)": {
+    maxHeight: "20rem",
+    maxWidth: "20rem",
+    objectFit: "contain",
+  },
+};
+
+function Cases() {
   return (
     <Container
       sx={{
@@ -22,7 +40,7 @@ function About() {
         backgroundColor: "#EDE6E3",
         color: "#1F271B",
       }}
-      maxWidth=""
+      maxWidth="1920px"
     >
       <Box
         sx={{
@@ -32,7 +50,7 @@ function About() {
           alignItems: "center",
           flexDirection: "column",
           borderRadius: "8px",
-          width: "100rem",
+          width: "180rem",
           backgroundColor: "#F9F7F7",
           flexShrink: 1,
         }}
@@ -50,20 +68,20 @@ function About() {
             m: "1rem",
             flexDirection: "column",
             flexWrap: "wrap",
+            "@media (max-width: 480px)": {
+              maxWidth: "20rem",
+            },
           }}
         >
-          <ImageList gap={10} sx={{ m: "3rem" }}>
+          <ImageList gap={10} cols={1} rowHeight={500} sx={{ m: "0.3rem" }}>
             {aboutData.map((item) => (
-              <ImageListItem key={item.img}>
+              <ImageListItem sx={imglist} key={item.img}>
                 <img
                   src={`${item.img}?w=248&fit=crop&auto=format`}
                   srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                   alt={item.title}
                   loading="lazy"
-                  style={{
-                    borderRadius: "7px",
-                    maxWidth: "20rem",
-                  }}
+                  style={images}
                 />
                 <ImageListItemBar title={item.title} position="below" />
               </ImageListItem>
@@ -75,4 +93,4 @@ function About() {
   );
 }
 
-export default About;
+export default Cases;

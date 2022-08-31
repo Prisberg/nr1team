@@ -1,10 +1,14 @@
 import volvo from "./images/volvo.png";
-import medieinstitutet from "./images/medieinstitutet.png";
+import design from "./images/design.jpg";
 import apple from "./images/apple.png";
 import poc from "./images/poc.png";
 import office from "./images/office.jpg";
 import code from "./images/code.jpg";
 import google from "./images/google.jpg";
+import uber from "./images/uber.jpg";
+import swarm from "./images/swarm.jpg";
+import lyft from "./images/lyft.jpg";
+import skype from "./images/skype.jpg";
 
 export const aboutData = [
   {
@@ -21,15 +25,27 @@ export const aboutData = [
     title: "Apple",
   },
   {
-    img: `${medieinstitutet}`,
-    title: "Medieinstitutet",
+    img: `${design}`,
+    title: "App",
+  },
+  {
+    img: `${code}`,
+    title: "Project",
+  },
+  {
+    img: `${lyft}`,
+    title: "Lyft",
   },
   {
     img: `${office}`,
     title: "Office",
   },
   {
-    img: `${google}`,
-    title: "Google",
+    img: `${skype}`,
+    title: "Skype",
+  },
+  {
+    img: `${swarm}`,
+    title: "App",
   },
 ];
