@@ -27,7 +27,7 @@ const imglist = {
   objectFit: "cover",
   //   m: "1rem",
   // },
-  width: { xs: "15rem", sm: "30rem", md: "40rem" },
+  width: { xs: "17rem", sm: "30rem", md: "40rem" },
   height: { xs: "10rem", sm: "30rem", md: "40rem" },
 };
 
