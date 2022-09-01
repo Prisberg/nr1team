@@ -6,8 +6,8 @@ const slogan = {
   color: "#F1F1F1",
   textAlign: "start",
   textShadow: "1.5px 1.5px 2px #A51D57",
-  letterSpacing: "1px",
   width: "auto",
+  fontFamily: "Montserrat",
 };
 
 const secondslogan = {
@@ -16,13 +16,18 @@ const secondslogan = {
   textShadow: "1.5px 1.5px 2px #A51D57",
   letterSpacing: "1px",
   width: "50rem",
+  mt: "0.5rem",
 };
+
 const button = {
   backgroundColor: "#A51D57",
   color: "#F1F1F1",
-  mt: "1rem",
+  mt: "1.3rem",
   ml: "4rem",
   fontWeight: "bold",
+  "&:hover": {
+    backgroundColor: "#681136",
+  },
 };
 
 function Greeting() {
@@ -57,10 +62,11 @@ function Greeting() {
             We don’t just design websites, we design experiences.
           </Typography>
           <Typography variant="h5" sx={secondslogan}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nemo
-            ex a corporis saepe, nobis aperiam, quia deserunt minima eius
+            Our team have broad knowledge and specialties in web development.
+            Our main goal is to always deilver a product that is tailored to our
+            clients needs and desire.
           </Typography>
-          <Button variant="contained" sx={button} color="inherit">
+          <Button variant="contained" sx={button}>
             Contact us
           </Button>
         </Box>

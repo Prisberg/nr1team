@@ -21,6 +21,10 @@ const Hamburgermenu = {
 };
 const font = {
   fontWeight: "bold",
+  fontSize: "1rem",
+  "&:hover": {
+    color: "#A51D57",
+  },
 };
 
 const Nav = {
@@ -28,7 +32,7 @@ const Nav = {
   "@media (max-width: 640px)": {
     display: "none",
   },
-  mr: "3rem",
+  mr: "4rem",
 };
 
 function NavBar() {
@@ -56,9 +60,17 @@ function NavBar() {
       >
         <Toolbar>
           <Typography
+            onClick={() => navigate("/")}
             variant="h4"
             component="div"
-            sx={{ flexGrow: 1, ml: "4rem", fontWeight: "bold" }}
+            sx={{
+              flexGrow: 1,
+              ml: "4rem",
+              fontWeight: "bold",
+              "&:hover": {
+                color: "#A51D57",
+              },
+            }}
           >
             PHIEE
           </Typography>
