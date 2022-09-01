@@ -14,14 +14,16 @@ const pages = ["Home", "About", "Cases", "Team", "Contact"];
 
 const Hamburgermenu = {
   display: "none",
-  "@media (max-width: 640px)": {
+  "@media (max-width: 730px)": {
     display: "flex",
   },
   mr: "0.5rem",
 };
+
 const font = {
+  mr: "0.1rem",
   fontWeight: "bold",
-  fontSize: "1rem",
+  fontSize: "1.1rem",
   "&:hover": {
     color: "#A51D57",
   },
@@ -29,10 +31,10 @@ const font = {
 
 const Nav = {
   display: "flex",
-  "@media (max-width: 640px)": {
+  "@media (max-width: 730px)": {
     display: "none",
   },
-  mr: "4rem",
+  mr: "2rem",
 };
 
 function NavBar() {
@@ -64,6 +66,9 @@ function NavBar() {
             variant="h4"
             component="div"
             sx={{
+              "@media (max-width: 800px)": {
+                ml: "2rem",
+              },
               flexGrow: 1,
               ml: "4rem",
               fontWeight: "bold",
@@ -112,7 +117,7 @@ function NavBar() {
             sx={Hamburgermenu}
             onClick={handleOpenNavMenu}
           >
-            <MenuIcon />
+            <MenuIcon sx={{ fontSize: "2.5rem" }} />
           </IconButton>
           <Menu
             id="menu-appbar"

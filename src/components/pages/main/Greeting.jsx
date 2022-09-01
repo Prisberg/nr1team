@@ -6,17 +6,29 @@ const slogan = {
   color: "#F1F1F1",
   textAlign: "start",
   textShadow: "1.5px 1.5px 2px #A51D57",
-  width: "auto",
   fontFamily: "Montserrat",
+  "@media (max-width: 880px)": {
+    fontSize: "3rem",
+  },
 };
 
 const secondslogan = {
   color: "#F1F1F1",
   textAlign: "start",
-  textShadow: "1.5px 1.5px 2px #A51D57",
-  letterSpacing: "1px",
+  // textShadow: "1.5px 1.5px 2px #A51D57",
   width: "50rem",
   mt: "0.5rem",
+  "@media (max-width: 1120px)": {
+    width: "40rem",
+  },
+  "@media (max-width: 880px)": {
+    width: "30rem",
+    fontSize: "1.5rem",
+  },
+  "@media (max-width: 580px)": {
+    width: "20rem",
+    fontSize: "1.5rem",
+  },
 };
 
 const button = {
@@ -56,6 +68,25 @@ function Greeting() {
             top: "19rem",
             left: "10rem",
             width: "57rem",
+            "@media (max-width: 1250px)": {
+              width: "57rem",
+              top: "17rem",
+              left: "7rem",
+            },
+            "@media (max-width: 1120px)": {
+              width: "55rem",
+              top: "17rem",
+              left: "7rem",
+            },
+            "@media (max-width: 880px)": {
+              left: "5rem",
+              width: "30rem",
+              top: "15rem",
+            },
+            "@media (max-width: 580px)": {
+              width: "20rem",
+              top: "10rem",
+            },
           }}
         >
           <Typography variant="h2" sx={slogan}>
