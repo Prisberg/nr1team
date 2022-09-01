@@ -1,4 +1,5 @@
 import { Box, Container, Button, Typography } from "@mui/material";
+import { flexbox } from "@mui/system";
 import React from "react";
 import greetingimg from "../../../assets/images/greeting-background.svg";
 
@@ -9,6 +10,12 @@ const slogan = {
   fontFamily: "Montserrat",
   "@media (max-width: 880px)": {
     fontSize: "3rem",
+  },
+  "@media (max-width: 450px)": {
+    fontSize: "2rem",
+  },
+  "@media (max-width: 360px)": {
+    fontSize: "1.5rem",
   },
 };
 
@@ -29,6 +36,17 @@ const secondslogan = {
     width: "20rem",
     fontSize: "1.5rem",
   },
+  "@media (max-width: 450px)": {
+    fontSize: "1rem",
+    width: "15rem",
+  },
+  "@media (max-width: 390px)": {
+    width: "13rem",
+  },
+  "@media (max-width: 360px)": {
+    width: "13rem",
+    fontSize: "0.8rem",
+  },
 };
 
 const button = {
@@ -40,6 +58,13 @@ const button = {
   "&:hover": {
     backgroundColor: "#681136",
   },
+  "@media (max-width: 450px)": {
+    ml: "2rem",
+  },
+  "@media (max-width: 360px)": {
+    fontSize: "0.7rem",
+    ml: "1rem",
+  },
 };
 
 function Greeting() {
@@ -49,7 +74,17 @@ function Greeting() {
         zIndex: "10",
       }}
     >
-      <Box sx={{ height: "700px" }}>
+      <Box
+        sx={{
+          height: "700px",
+          "@media (max-width: 450px)": {
+            height: "500px",
+          },
+          "@media (max-width: 360px)": {
+            height: "400px",
+          },
+        }}
+      >
         <img
           src={greetingimg}
           alt="greeting"
@@ -60,6 +95,12 @@ function Greeting() {
             position: "absolute",
             top: "1px",
             zIndex: "-1",
+            "@media (max-width: 450px)": {
+              height: "500px",
+            },
+            "@media (max-width: 360px)": {
+              height: "400px",
+            },
           }}
         />
         <Box
@@ -85,6 +126,17 @@ function Greeting() {
             },
             "@media (max-width: 580px)": {
               width: "20rem",
+              top: "10rem",
+              left: "4rem",
+            },
+            "@media (max-width: 390px)": {
+              width: "16rem",
+              top: "8rem",
+              left: "4rem",
+            },
+            "@media (max-width: 360px)": {
+              width: "20rem",
+              left: "2rem",
               top: "10rem",
             },
           }}
