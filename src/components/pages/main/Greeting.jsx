@@ -1,8 +1,8 @@
-import { Box, Container, Button, Typography } from "@mui/material";
-import { flexbox } from "@mui/system";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import greetingimg from "../../../assets/images/greeting-background.svg";
 import MovingText from "react-moving-text";
+import { useNavigate } from "react-router-dom";
 
 const slogan = {
   color: "#F1F1F1",
@@ -69,6 +69,8 @@ const button = {
 };
 
 function Greeting() {
+  const navigate = useNavigate();
+
   return (
     <Box
       sx={{
@@ -143,13 +145,13 @@ function Greeting() {
           }}
         >
           <MovingText
-            type="slideInFromTop"
-            duration="600ms"
+            type="flipFromTop"
+            duration="1000ms"
             delay="0s"
             direction="normal"
             timing="ease"
             iteration="1"
-            fillMode="none"
+            fillMode="both"
           >
             <Typography className="text" variant="h2" sx={slogan}>
               We don’t just design websites, we design experiences.
@@ -159,7 +161,11 @@ function Greeting() {
               Our main goal is to always deilver a product that is tailored to
               our clients needs and desire.
             </Typography>
-            <Button variant="contained" sx={button}>
+            <Button
+              onClick={() => navigate("/contact")}
+              variant="contained"
+              sx={button}
+            >
               Contact us
             </Button>
           </MovingText>
