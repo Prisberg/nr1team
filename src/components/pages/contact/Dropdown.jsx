@@ -1,5 +1,4 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -13,8 +12,7 @@ export default function BasicSelect() {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
+      <FormControl fullWidt>
         <InputLabel id="name-select-label">Who to contact</InputLabel>
         <Select
           labelId="name-select-label"
@@ -30,6 +28,6 @@ export default function BasicSelect() {
           <MenuItem value={"Isaaq Guleed"}>Isaaq Guleed</MenuItem>
               </Select>
       </FormControl>
-    </Box>
+
   );
 }

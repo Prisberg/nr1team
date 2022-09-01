@@ -12,6 +12,7 @@ import Cases from "./pages/cases/Cases";
 import Footer from "./footer/Footer";
 import Main from "./pages/main/Main";
 import Team from "./pages/main/teams/Team";
+import Confirm from "./pages/contact/Confirm";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/cases" element={<Cases />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/confirm" element={<Confirm />} />
         </Routes>
         <Footer />
       </BrowserRouter>
