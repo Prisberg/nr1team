@@ -1,14 +1,8 @@
-import {
-  Button,
-  TextField,
-  createTheme,
-  ThemeProvider,
-} from "@mui/material";
+import { Button, TextField, createTheme, ThemeProvider } from "@mui/material";
 import React from "react";
 import { FormCheck } from "./FormCheck";
 import "./contact.css";
 import Dropdown from "./Dropdown";
-
 
 const theme = createTheme({
   palette: {
@@ -46,8 +40,7 @@ const inputFieldValues = [
 ];
 
 export const ContactForm = () => {
-  const { handleInputValue, formIsValid, errors } =
-    FormCheck();
+  const { handleInputValue, formIsValid, errors } = FormCheck();
 
   return (
     <ThemeProvider theme={theme}>
@@ -57,7 +50,7 @@ export const ContactForm = () => {
         sx={{ margin: 2 }}
         method="POST"
       >
-      <Dropdown/>
+        <Dropdown />
         {inputFieldValues.map((inputFieldValue, index) => {
           return (
             <div className="input">
@@ -86,7 +79,8 @@ export const ContactForm = () => {
             type="submit"
             color="secondary"
             disabled={!formIsValid()}
-            name="_next" value="http://localhost:3000/confirm"
+            name="_next"
+            value="https://nr1team.netlify.app/confirm"
           >
             Send Message
           </Button>
