@@ -18,11 +18,17 @@ export default function PortfolioProvider(props) {
     const [loggedIn, setLoggedIn] = useState(false);
 
     function extractLocalStorage() {
+        const loggedInLStorage = localStorage.getItem('loggedIn')
         //Function for getting localstorage data. To be used when account created and on first load.
-        setEmail(localStorage.getItem('email').replace(/['"]+/g, ''));
-        setUsername(localStorage.getItem('fName').replace(/['"]+/g, ''));
-        // setLName(localStorage.getItem('lName').replace(/['"]+/g, '')); Use this to autofill email form?
-        setPassword(localStorage.getItem('password').replace(/['"]+/g, ''));
+        if (localStorage.getItem('email') != null) {
+            setEmail(localStorage.getItem('email').replace(/['"]+/g, ''));
+            setUsername(localStorage.getItem('fName').replace(/['"]+/g, ''));
+            // setLName(localStorage.getItem('lName').replace(/['"]+/g, '')); Use this to autofill email form?
+            setPassword(localStorage.getItem('password').replace(/['"]+/g, ''));
+            if (loggedInLStorage != null) {
+                loggedInLStorage === "true" ? setLoggedIn(true) : setLoggedIn(false);
+            }
+        }
     }
 
     useEffect(() => {

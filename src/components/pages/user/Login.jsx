@@ -1,22 +1,25 @@
 import { Box, Button, Link, TextField, Typography } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { usePortfolioContext } from "../../../utils/PortfolioContext";
 
 function Login() {
-    const { email, password } = usePortfolioContext();
+    const { email, password, extractLocalStorage } = usePortfolioContext();
     const [emailState, setStateEmail] = useState("");
     const [passwordState, setStatePassword] = useState("");
+    const navigate = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault();
         console.log(email + ' ' + password);
         console.log(emailState + ' ' + passwordState);
-        
+
         //compare input to email and password
         if (email === emailState && password === passwordState) {
             console.log('logged in success');
-            //navigate to main page
-            //display confirmation of successfull login
+            window.localStorage.setItem('loggedIn','true')
+            extractLocalStorage();
+            navigate("/");
         } else {
             console.log("who the f r u");
             //display confirmation of failed login
@@ -43,6 +46,7 @@ function Login() {
                         value={passwordState}
                         name="password"
                         label="Password"
+                        autoComplete="off"
                         fullWidth
                         required
                     />
