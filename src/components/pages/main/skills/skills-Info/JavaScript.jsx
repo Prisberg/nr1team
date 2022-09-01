@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography} from '@mui/material';
 import './skillInfo.css'
 import skillTest from '../Skill-imgs/skillTest.png'
 
@@ -60,9 +60,9 @@ function JavaScript () {
   }
   const skillProjects = {
     display: 'flex',
-    alignItems:{ xs: 'center', md: 'flex-start', lg: 'flex-start', xl: 'flex-start'},
+    alignItems:{ xs: 'center', md: 'center', lg: 'flex-start', xl: 'flex-start'},
     justifyContent: 'center',
-    width:{ xs: '380px', s: '380px', md: '500px', lg: '1226px', xl: '1226px'},
+    width:{ xs: '380px', md: '800px', lg: '1226px', xl: '1226px'},
     flexWrap: { xs: 'no-wrap', md: 'wrap', lg: 'wrap', xl: 'wrap'},
     marginTop: '2em',
     flexDirection: { xs: 'column', md: 'row', lg: 'row'}

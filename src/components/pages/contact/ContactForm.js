@@ -2,6 +2,7 @@ import { Button, TextField, createTheme, ThemeProvider } from "@mui/material";
 import React from "react";
 import { FormCheck } from "./FormCheck";
 import "./contact.css";
+import Dropdown from "./Dropdown";
 
 const theme = createTheme({
   palette: {
@@ -39,12 +40,17 @@ const inputFieldValues = [
 ];
 
 export const ContactForm = () => {
-  const { handleInputValue, handleFormSubmit, formIsValid, errors } =
-    FormCheck();
+  const { handleInputValue, formIsValid, errors } = FormCheck();
 
   return (
     <ThemeProvider theme={theme}>
-      <form autoComplete="off" onSubmit={handleFormSubmit} sx={{ margin: 2 }}>
+      <form
+        autoComplete="off"
+        action="https://formsubmit.co/rchtectdev@gmail.com"
+        sx={{ margin: 2 }}
+        method="POST"
+      >
+        <Dropdown />
         {inputFieldValues.map((inputFieldValue, index) => {
           return (
             <div className="input">
@@ -73,6 +79,8 @@ export const ContactForm = () => {
             type="submit"
             color="secondary"
             disabled={!formIsValid()}
+            name="_next"
+            value="https://nr1team.netlify.app/confirm"
           >
             Send Message
           </Button>

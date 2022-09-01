@@ -15,16 +15,13 @@ function Greeting() {
           pb: "8rem",
         }}
       >
-        <Box
-          sx={{
-            backgroundImage: `url(${Logotype})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            minHeight: "150px",
-            width: "100%",
-          }}
-        ></Box>
-        <Typography variant="h4">For smart web designs</Typography>
+        <Box>
+          <img src={Logotype} style={{ maxWidth: "100%", height: "auto" }} />
+        </Box>
+
+        <Typography variant="h4" sx={{ fontSize: "5vw" }}>
+          For smart web designs
+        </Typography>
       </Box>
     </Box>
   );
