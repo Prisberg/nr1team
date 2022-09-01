@@ -24,8 +24,10 @@ const font = {
   mr: "0.1rem",
   fontWeight: "bold",
   fontSize: "1.1rem",
+  backgroundColor: "transparent",
   "&:hover": {
     color: "#A51D57",
+    backgroundColor: "transparent",
   },
 };
 

@@ -2,6 +2,7 @@ import { Box, Container, Button, Typography } from "@mui/material";
 import { flexbox } from "@mui/system";
 import React from "react";
 import greetingimg from "../../../assets/images/greeting-background.svg";
+import MovingText from "react-moving-text";
 
 const slogan = {
   color: "#F1F1F1",
@@ -141,17 +142,27 @@ function Greeting() {
             },
           }}
         >
-          <Typography variant="h2" sx={slogan}>
-            We don’t just design websites, we design experiences.
-          </Typography>
-          <Typography variant="h5" sx={secondslogan}>
-            Our team have broad knowledge and specialties in web development.
-            Our main goal is to always deilver a product that is tailored to our
-            clients needs and desire.
-          </Typography>
-          <Button variant="contained" sx={button}>
-            Contact us
-          </Button>
+          <MovingText
+            type="slideInFromTop"
+            duration="600ms"
+            delay="0s"
+            direction="normal"
+            timing="ease"
+            iteration="1"
+            fillMode="none"
+          >
+            <Typography className="text" variant="h2" sx={slogan}>
+              We don’t just design websites, we design experiences.
+            </Typography>
+            <Typography variant="h5" sx={secondslogan}>
+              Our team have broad knowledge and specialties in web development.
+              Our main goal is to always deilver a product that is tailored to
+              our clients needs and desire.
+            </Typography>
+            <Button variant="contained" sx={button}>
+              Contact us
+            </Button>
+          </MovingText>
         </Box>
       </Box>
     </Box>
