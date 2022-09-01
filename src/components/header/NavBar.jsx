@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
-const pages = ["Home", "About", "Team", "Contact"];
+const pages = ["Home", "About", "Cases", "Team", "Contact"];
 
 const Hamburgermenu = {
   display: "none",
@@ -55,7 +55,9 @@ function NavBar() {
             <Button onClick={() => navigate("/about")} color="inherit">
               About
             </Button>
-
+            <Button onClick={() => navigate("/cases")} color="inherit">
+              Cases
+            </Button>
             <Button onClick={() => navigate("/team")} color="inherit">
               Team
             </Button>
@@ -112,13 +114,16 @@ function NavBar() {
               </Button>
               <Button
                 color="inherit"
-                onClick={() => navigate("/team")}
+                onClick={() => navigate("/cases")}
                 textAlign="center"
               >
                 {pages[2]}
               </Button>
-              <Button color="inherit" onClick={() => navigate("/contact")}>
+              <Button color="inherit" onClick={() => navigate("/team")}>
                 {pages[3]}
+              </Button>
+              <Button color="inherit" onClick={() => navigate("/contact")}>
+                {pages[4]}
               </Button>
             </MenuItem>
           </Menu>
