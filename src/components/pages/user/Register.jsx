@@ -20,20 +20,13 @@ function Register() {
 
     function handleSubmit(e) {
         e.preventDefault();
+        setEmail(stateEmail);
+        setFName(stateFName);
+        setLName(stateLName);
+        setPassword(statePassword);
 
-        //compare email in localstorage with email in input, if the same then dont create acc.
-        if (stateEmail === email) {
-            //display error to user
-            return "this email is already in use"
-        } else {
-            setEmail(stateEmail);
-            setFName(stateFName);
-            setLName(stateLName);
-            setPassword(statePassword);
-
-            extractLocalStorage();
-            navigate('/login')
-        }
+        extractLocalStorage();
+        navigate('/login')
     }
 
     return (

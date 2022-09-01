@@ -1,4 +1,4 @@
-import { Box, Button, Link, TextField, Typography } from "@mui/material";
+import { Alert, Box, Button, Link, Snackbar, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { usePortfolioContext } from "../../../utils/PortfolioContext";
@@ -7,23 +7,24 @@ function Login() {
     const { email, password, extractLocalStorage } = usePortfolioContext();
     const [emailState, setStateEmail] = useState("");
     const [passwordState, setStatePassword] = useState("");
+    const [open, setOpen] = useState(false);
     const navigate = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(email + ' ' + password);
-        console.log(emailState + ' ' + passwordState);
-
         //compare input to email and password
         if (email === emailState && password === passwordState) {
-            console.log('logged in success');
-            window.localStorage.setItem('loggedIn','true')
+            window.localStorage.setItem('loggedIn', 'true')
             extractLocalStorage();
             navigate("/");
         } else {
-            console.log("who the f r u");
             //display confirmation of failed login
+            setOpen(true)
         }
+    }
+
+    function handleClose() {
+        setOpen(false)
     }
 
     return (
@@ -59,6 +60,11 @@ function Login() {
                     <Typography>Don't have an account? <Link href="/register">Create account.</Link></Typography>
                 </Box>
             </Box>
+            <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                    Wrong email or password
+                </Alert>
+            </Snackbar>
         </form>
     )
 }
