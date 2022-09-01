@@ -17,6 +17,10 @@ const Hamburgermenu = {
   "@media (max-width: 640px)": {
     display: "flex",
   },
+  mr: "0.5rem",
+};
+const font = {
+  fontWeight: "bold",
 };
 
 const Nav = {
@@ -24,7 +28,7 @@ const Nav = {
   "@media (max-width: 640px)": {
     display: "none",
   },
-  mr: 1,
+  mr: "3rem",
 };
 
 function NavBar() {
@@ -39,30 +43,52 @@ function NavBar() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, backgroundColor: "transparent", zIndex: "100" }}>
       <AppBar
-        sx={{ flexGrow: 1, backgroundColor: "#1F271B" }}
+        sx={{
+          mt: "1.5rem",
+          flexGrow: 1,
+          backgroundColor: "transparent",
+          color: "#F1F1F1",
+        }}
         position="static"
+        elevation={0}
       >
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Logo
+          <Typography
+            variant="h4"
+            component="div"
+            sx={{ flexGrow: 1, ml: "4rem", fontWeight: "bold" }}
+          >
+            PHIEE
           </Typography>
           <Box sx={Nav}>
-            <Button color="inherit" onClick={() => navigate("/")}>
+            <Button sx={font} color="inherit" onClick={() => navigate("/")}>
               Home
             </Button>
-            <Button onClick={() => navigate("/about")} color="inherit">
+            <Button
+              sx={font}
+              onClick={() => navigate("/about")}
+              color="inherit"
+            >
               About
             </Button>
-            <Button onClick={() => navigate("/cases")} color="inherit">
+            <Button
+              sx={font}
+              onClick={() => navigate("/cases")}
+              color="inherit"
+            >
               Cases
             </Button>
-            <Button onClick={() => navigate("/team")} color="inherit">
+            <Button sx={font} onClick={() => navigate("/team")} color="inherit">
               Team
             </Button>
 
-            <Button onClick={() => navigate("/contact")} color="inherit">
+            <Button
+              sx={font}
+              onClick={() => navigate("/contact")}
+              color="inherit"
+            >
               Contact
             </Button>
           </Box>
