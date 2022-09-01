@@ -23,6 +23,7 @@ const slogan = {
 const secondslogan = {
   color: "#F1F1F1",
   textAlign: "start",
+  fontWeight: "regular",
   // textShadow: "1.5px 1.5px 2px #A51D57",
   width: "50rem",
   mt: "0.5rem",
@@ -146,7 +147,7 @@ function Greeting() {
         >
           <MovingText
             type="flipFromTop"
-            duration="1000ms"
+            duration="100ms"
             delay="0s"
             direction="normal"
             timing="ease"

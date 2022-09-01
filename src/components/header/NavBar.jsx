@@ -140,7 +140,12 @@ function NavBar() {
             }}
           >
             <MenuItem
-              sx={{ display: "flex", flexDirection: "column" }}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                backgroundColor: "red",
+                mr: "1rem",
+              }}
               onClick={handleCloseNavMenu}
             >
               <Button
