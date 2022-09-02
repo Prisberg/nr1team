@@ -1,4 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./pages/user/Login";
+import Register from "./pages/user/Register";
+import { usePortfolioContext } from "../utils/PortfolioContext";
 import Navbar from "./header/NavBar";
 import JavaScript from "./pages/main/skills/skills-Info/JavaScript";
 import Node from "./pages/main/skills/skills-Info/Node";
@@ -14,7 +17,10 @@ import Main from "./pages/main/Main";
 import Team from "./pages/main/teams/Team";
 import Confirm from "./pages/contact/Confirm";
 
+
 function App() {
+  const { loggedIn } = usePortfolioContext();
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -22,6 +28,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/JavaScript" element={<JavaScript />} />
+          <Route path="/login" element={loggedIn ? null : <Login />} />
+          <Route path="/register" element={loggedIn ? null : <Register />} />
           <Route path="/Node" element={<Node />} />
           <Route path="/Figma" element={<Figma />} />
           <Route path="/Mongo" element={<Mongo />} />

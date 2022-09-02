@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -9,6 +9,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { usePortfolioContext } from "../../utils/PortfolioContext";
+import { Alert, Snackbar } from "@mui/material";
 
 const pages = ["Home", "About", "Cases", "Team", "Contact"];
 
@@ -28,8 +30,10 @@ const Nav = {
 };
 
 function NavBar() {
+  const { loggedIn, username } = usePortfolioContext();
   const navigate = useNavigate();
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [open, setOpen] = useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -37,6 +41,21 @@ function NavBar() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  function logOut() {
+    window.localStorage.setItem('loggedIn', 'false');
+    window.location.reload();
+  }
+
+  useEffect(() => {
+    if (loggedIn) {
+      setOpen(true)
+    }
+  }, [loggedIn])
+
+  function handleClose() {
+    setOpen(false)
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -65,6 +84,14 @@ function NavBar() {
             <Button onClick={() => navigate("/contact")} color="inherit">
               Contact
             </Button>
+
+            {loggedIn ?
+              <Button onClick={logOut} color="inherit">
+                Log out
+              </Button> :
+              <Button onClick={() => navigate("/login")} color="inherit">
+                Log in
+              </Button>}
           </Box>
           <IconButton
             size="large"
@@ -129,7 +156,12 @@ function NavBar() {
           </Menu>
         </Toolbar>
       </AppBar>
-    </Box>
+      <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Welcome {username}!
+        </Alert>
+      </Snackbar>
+    </Box >
   );
 }
 
