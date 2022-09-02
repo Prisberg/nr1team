@@ -7,6 +7,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 const mapstyling = {
   border: "0",
   marginTop: "2.4rem",
+  borderRadius: "7px",
 };
 
 function Footer() {

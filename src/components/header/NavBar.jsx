@@ -12,6 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { usePortfolioContext } from "../../utils/PortfolioContext";
 import { Alert, Snackbar } from "@mui/material";
 import { useRef } from "react";
+import icon from "../../assets/images/icon.svg";
 
 const pages = ["Home", "Cases", "Team", "Contact", "Login"];
 
@@ -93,16 +94,28 @@ function NavBar() {
         elevation={0}
       >
         <Toolbar>
+          <Box
+            component="img"
+            src={icon}
+            sx={{
+              height: "1.6rem",
+              width: "2rem",
+              ml: "2rem",
+              mb: "0.3rem",
+              mr: "0.3rem",
+              "@media (max-width: 450px)": {
+                ml: "1rem",
+              },
+            }}
+            loading="lazy"
+          />
           <Typography
             onClick={() => navigate("/")}
             variant="h4"
             component="div"
             sx={{
-              "@media (max-width: 800px)": {
-                ml: "2rem",
-              },
+              "@media (max-width: 800px)": {},
               flexGrow: 1,
-              ml: "4rem",
               fontWeight: "bold",
               "&:hover": {
                 color: "#A51D57",
@@ -155,7 +168,11 @@ function NavBar() {
             sx={Hamburgermenu}
             onClick={handleOpenNavMenu}
           >
-            <MenuIcon sx={{ fontSize: "2.5rem" }} />
+            <MenuIcon
+              sx={{
+                fontSize: "2.5rem",
+              }}
+            />
           </IconButton>
           <Menu
             disableScrollLock={true}
