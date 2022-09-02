@@ -7,24 +7,32 @@ import ImageListItemBar from "@mui/material/ImageListItemBar";
 import { aboutData } from "../../../assets/aboutData";
 
 const textStyling = {
-  mt: "4rem",
-  mb: "3rem",
+  mt: "3rem",
+  mb: "1rem",
   fontWeight: "medium",
   fontFamily: "Montserrat",
   color: "#F1F1F1",
+  textAlign: "start",
 };
 
 const images = {
   width: { xs: "12rem", sm: "17rem", md: "25rem", lg: "30rem" },
-  height: { xs: "10rem", sm: "15rem", md: "20rem", lg: "30rem" },
+  height: { xs: "10rem", sm: "15rem", md: "20rem", lg: "25rem" },
   borderRadius: "7px",
   objectFit: "cover",
   boxShadow: "1px 2px 1.5px rgba(0, 0, 0, 0.1)",
+  "@media (max-width: 450px)": {
+    height: "7rem",
+    width: "8rem",
+  },
 };
 
 const imglist = {
   objectFit: "cover",
   width: { xs: "12rem", sm: "17rem", md: "25rem", lg: "30rem" },
+  "@media (max-width: 450px)": {
+    width: "8rem",
+  },
   color: "#F1F1F1",
   fontWeight: "medium",
   fontFamily: "Montserrat",
@@ -42,20 +50,16 @@ function Cases() {
         flexShrink: 1,
       }}
     >
-      <Box sx={{ maxWidth: "65rem" }}>
-        <Typography sx={textStyling} variant="h4">
-          Cases
-        </Typography>
-      </Box>
       <Box
         sx={{
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
           m: "1rem",
           flexDirection: "column",
         }}
       >
+        <Typography sx={textStyling} variant="h4">
+          Cases
+        </Typography>
         <ImageList
           gap={25}
           cols={2}
@@ -71,7 +75,15 @@ function Cases() {
                 loading="lazy"
                 sx={images}
               />
-              <ImageListItemBar title={item.title} position="center" />
+              <ImageListItemBar
+                sx={{
+                  height: "4rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                title={item.title}
+              />
             </ImageListItem>
           ))}
         </ImageList>
