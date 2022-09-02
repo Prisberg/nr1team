@@ -11,7 +11,7 @@ const mapstyling = {
 
 function Footer() {
   return (
-    <Box sx={{ backgroundColor: "#080020", width: "100%" }}>
+    <Box sx={{ backgroundColor: "#000E1A", width: "100%" }}>
       <Box
         sx={{
           display: "flex",
