@@ -147,7 +147,7 @@ function Greeting() {
         >
           <MovingText
             type="flipFromTop"
-            duration="100ms"
+            duration="1000ms"
             delay="0s"
             direction="normal"
             timing="ease"
