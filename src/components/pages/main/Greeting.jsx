@@ -4,6 +4,20 @@ import greetingimg from "../../../assets/images/greeting-background.svg";
 import MovingText from "react-moving-text";
 import { useNavigate } from "react-router-dom";
 
+const imgstyling = {
+  height: "790px",
+  width: "100%",
+  objectFit: "cover",
+  position: "absolute",
+  top: "0px",
+  zIndex: "-1",
+  "@media (max-width: 450px)": {
+    height: "500px",
+  },
+  "@media (max-width: 360px)": {
+    height: "800px",
+  },
+};
 const slogan = {
   color: "#F1F1F1",
   textAlign: "start",
@@ -24,7 +38,6 @@ const secondslogan = {
   color: "#F1F1F1",
   textAlign: "start",
   fontWeight: "regular",
-  // textShadow: "1.5px 1.5px 2px #A51D57",
   width: "50rem",
   mt: "0.5rem",
   "@media (max-width: 1120px)": {
@@ -89,29 +102,12 @@ function Greeting() {
           },
         }}
       >
-        <img
-          src={greetingimg}
-          alt="greeting"
-          style={{
-            height: "800px",
-            width: "100%",
-            objectFit: "cover",
-            position: "absolute",
-            top: "1px",
-            zIndex: "-1",
-            "@media (max-width: 450px)": {
-              height: "500px",
-            },
-            "@media (max-width: 360px)": {
-              height: "400px",
-            },
-          }}
-        />
+        <img src={greetingimg} alt="greeting" style={imgstyling} />
         <Box
           sx={{
             position: "absolute",
             top: "19rem",
-            left: "10rem",
+            left: "8rem",
             width: "57rem",
             "@media (max-width: 1250px)": {
               width: "57rem",
@@ -119,7 +115,7 @@ function Greeting() {
               left: "7rem",
             },
             "@media (max-width: 1120px)": {
-              width: "55rem",
+              width: "46rem",
               top: "17rem",
               left: "7rem",
             },
@@ -139,7 +135,7 @@ function Greeting() {
               left: "4rem",
             },
             "@media (max-width: 360px)": {
-              width: "20rem",
+              width: "16rem",
               left: "2rem",
               top: "10rem",
             },
@@ -155,7 +151,7 @@ function Greeting() {
             fillMode="both"
           >
             <Typography className="text" variant="h2" sx={slogan}>
-              We don’t just design websites, we design experiences.
+              We don’t just design websites, we design experiences
             </Typography>
             <Typography variant="h5" sx={secondslogan}>
               Our team have broad knowledge and specialties in web development.

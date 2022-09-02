@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { usePortfolioContext } from "../../utils/PortfolioContext";
 import { Alert, Snackbar } from "@mui/material";
 
-const pages = ["Home", "About", "Cases", "Team", "Contact"];
+const pages = ["Home", "Cases", "Team", "Contact", "Login"];
 
 const Hamburgermenu = {
   display: "none",
@@ -58,18 +58,18 @@ function NavBar() {
   };
 
   function logOut() {
-    window.localStorage.setItem('loggedIn', 'false');
+    window.localStorage.setItem("loggedIn", "false");
     window.location.reload();
   }
 
   useEffect(() => {
     if (loggedIn) {
-      setOpen(true)
+      setOpen(true);
     }
-  }, [loggedIn])
+  }, [loggedIn]);
 
   function handleClose() {
-    setOpen(false)
+    setOpen(false);
   }
 
   return (
@@ -109,13 +109,6 @@ function NavBar() {
             </Button>
             <Button
               sx={font}
-              onClick={() => navigate("/about")}
-              color="inherit"
-            >
-              About
-            </Button>
-            <Button
-              sx={font}
               onClick={() => navigate("/cases")}
               color="inherit"
             >
@@ -132,14 +125,19 @@ function NavBar() {
             >
               Contact
             </Button>
-
-            {loggedIn ?
+            {loggedIn ? (
               <Button onClick={logOut} color="inherit">
                 Log out
-              </Button> :
-              <Button onClick={() => navigate("/login")} color="inherit">
-                Log in
-              </Button>}
+              </Button>
+            ) : (
+              <Button
+                sx={font}
+                onClick={() => navigate("/login")}
+                color="inherit"
+              >
+                Login
+              </Button>
+            )}
           </Box>
           <IconButton
             size="large"
@@ -173,8 +171,6 @@ function NavBar() {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                m: "0",
-                p: "0",
               }}
               onClick={handleCloseNavMenu}
             >
@@ -187,22 +183,22 @@ function NavBar() {
               </Button>
               <Button
                 color="inherit"
-                onClick={() => navigate("/about")}
+                onClick={() => navigate("/cases")}
                 textAlign="center"
               >
                 {pages[1]}
               </Button>
-              <Button
-                color="inherit"
-                onClick={() => navigate("/cases")}
-                textAlign="center"
-              >
+              <Button color="inherit" onClick={() => navigate("/team")}>
                 {pages[2]}
               </Button>
-              <Button color="inherit" onClick={() => navigate("/team")}>
+              <Button color="inherit" onClick={() => navigate("/contact")}>
                 {pages[3]}
               </Button>
-              <Button color="inherit" onClick={() => navigate("/contact")}>
+              <Button
+                color="inherit"
+                onClick={() => navigate("/about")}
+                textAlign="center"
+              >
                 {pages[4]}
               </Button>
             </MenuItem>
@@ -210,11 +206,11 @@ function NavBar() {
         </Toolbar>
       </AppBar>
       <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
           Welcome {username}!
         </Alert>
       </Snackbar>
-    </Box >
+    </Box>
   );
 }
 
