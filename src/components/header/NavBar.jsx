@@ -73,7 +73,13 @@ function NavBar() {
   }
 
   return (
-    <Box sx={{ flexGrow: 1, backgroundColor: "transparent", zIndex: "100" }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        backgroundColor: "transparent",
+        zIndex: "100",
+      }}
+    >
       <AppBar
         sx={{
           mt: "1.5rem",
@@ -150,6 +156,7 @@ function NavBar() {
             <MenuIcon sx={{ fontSize: "2.5rem" }} />
           </IconButton>
           <Menu
+            disableScrollLock={true}
             id="menu-appbar"
             anchorEl={anchorElNav}
             anchorOrigin={{
@@ -168,9 +175,12 @@ function NavBar() {
             }}
           >
             <MenuItem
+              dense="true"
               sx={{
                 display: "flex",
                 flexDirection: "column",
+                overFlow: "scroll",
+                p: "0",
               }}
               onClick={handleCloseNavMenu}
             >
