@@ -37,7 +37,6 @@ function App() {
           <Route path="/UxDesign" element={<UxDesign />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
-          <Route path="/cases" element={<Cases />} />
           <Route path="/team" element={<Team />} />
           <Route path="/confirm" element={<Confirm />} />
         </Routes>

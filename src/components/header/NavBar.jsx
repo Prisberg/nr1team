@@ -16,17 +16,32 @@ const pages = ["Home", "About", "Cases", "Team", "Contact"];
 
 const Hamburgermenu = {
   display: "none",
-  "@media (max-width: 640px)": {
+  "@media (max-width: 730px)": {
     display: "flex",
+  },
+  mr: "0.5rem",
+  "&:hover": {
+    color: "#A51D57",
+  },
+};
+
+const font = {
+  mr: "0.1rem",
+  fontWeight: "bold",
+  fontSize: "1.1rem",
+  backgroundColor: "transparent",
+  "&:hover": {
+    color: "#A51D57",
+    backgroundColor: "transparent",
   },
 };
 
 const Nav = {
   display: "flex",
-  "@media (max-width: 640px)": {
+  "@media (max-width: 730px)": {
     display: "none",
   },
-  mr: 1,
+  mr: "2rem",
 };
 
 function NavBar() {
@@ -58,30 +73,63 @@ function NavBar() {
   }
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, backgroundColor: "transparent", zIndex: "100" }}>
       <AppBar
-        sx={{ flexGrow: 1, backgroundColor: "#1F271B" }}
+        sx={{
+          mt: "1.5rem",
+          flexGrow: 1,
+          backgroundColor: "transparent",
+          color: "#F1F1F1",
+        }}
         position="static"
+        elevation={0}
       >
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Logo
+          <Typography
+            onClick={() => navigate("/")}
+            variant="h4"
+            component="div"
+            sx={{
+              "@media (max-width: 800px)": {
+                ml: "2rem",
+              },
+              flexGrow: 1,
+              ml: "4rem",
+              fontWeight: "bold",
+              "&:hover": {
+                color: "#A51D57",
+              },
+            }}
+          >
+            PHIEE
           </Typography>
           <Box sx={Nav}>
-            <Button color="inherit" onClick={() => navigate("/")}>
+            <Button sx={font} color="inherit" onClick={() => navigate("/")}>
               Home
             </Button>
-            <Button onClick={() => navigate("/about")} color="inherit">
+            <Button
+              sx={font}
+              onClick={() => navigate("/about")}
+              color="inherit"
+            >
               About
             </Button>
-            <Button onClick={() => navigate("/cases")} color="inherit">
+            <Button
+              sx={font}
+              onClick={() => navigate("/cases")}
+              color="inherit"
+            >
               Cases
             </Button>
-            <Button onClick={() => navigate("/team")} color="inherit">
+            <Button sx={font} onClick={() => navigate("/team")} color="inherit">
               Team
             </Button>
 
-            <Button onClick={() => navigate("/contact")} color="inherit">
+            <Button
+              sx={font}
+              onClick={() => navigate("/contact")}
+              color="inherit"
+            >
               Contact
             </Button>
 
@@ -101,7 +149,7 @@ function NavBar() {
             sx={Hamburgermenu}
             onClick={handleOpenNavMenu}
           >
-            <MenuIcon />
+            <MenuIcon sx={{ fontSize: "2.5rem" }} />
           </IconButton>
           <Menu
             id="menu-appbar"
@@ -122,7 +170,12 @@ function NavBar() {
             }}
           >
             <MenuItem
-              sx={{ display: "flex", flexDirection: "column" }}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                m: "0",
+                p: "0",
+              }}
               onClick={handleCloseNavMenu}
             >
               <Button
