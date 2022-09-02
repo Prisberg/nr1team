@@ -15,17 +15,16 @@ const textStyling = {
 };
 
 const images = {
+  width: { xs: "12rem", sm: "17rem", md: "25rem", lg: "30rem" },
+  height: { xs: "10rem", sm: "15rem", md: "20rem", lg: "30rem" },
   borderRadius: "7px",
-  maxHeight: "20rem",
-  maxWidth: "40rem",
   objectFit: "cover",
   boxShadow: "1px 2px 1.5px rgba(0, 0, 0, 0.1)",
 };
 
 const imglist = {
   objectFit: "cover",
-  width: { xs: "17rem", sm: "30rem", md: "40rem" },
-  height: { xs: "10px", sm: "10px", md: "10px" },
+  width: { xs: "12rem", sm: "17rem", md: "25rem", lg: "30rem" },
   color: "#F1F1F1",
   fontWeight: "medium",
   fontFamily: "Montserrat",
@@ -57,15 +56,20 @@ function Cases() {
           flexDirection: "column",
         }}
       >
-        <ImageList gap={10} cols={1} rowHeight={400} sx={{ m: "0.3rem" }}>
+        <ImageList
+          gap={25}
+          cols={2}
+          rowHeight={{ xs: "", sm: "17rem", md: "25rem", lg: "30rem" }}
+        >
           {aboutData.map((item) => (
             <ImageListItem sx={imglist} key={item.img}>
-              <img
+              <Box
+                component="img"
                 src={`${item.img}?w=248&fit=crop&auto=format`}
                 srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                 alt={item.title}
                 loading="lazy"
-                style={images}
+                sx={images}
               />
               <ImageListItemBar title={item.title} position="center" />
             </ImageListItem>
