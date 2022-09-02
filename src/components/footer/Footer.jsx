@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import React from "react";
 import CopyrightIcon from "@mui/icons-material/Copyright";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -73,25 +73,29 @@ function Footer() {
                 display: "flex",
               }}
             >
-              <LinkedInIcon
-                sx={{
-                  height: "40px",
-                  width: "40px",
-                  color: "white",
-                  pr: "1rem",
-                }}
-              />
-              <GitHubIcon
-                sx={{
-                  height: "40px",
-                  width: "40px",
-                  color: "white",
-                  pr: "1rem",
-                }}
-              />
-              <FacebookIcon
-                sx={{ height: "40px", width: "40px", color: "white" }}
-              />
+              <IconButton sx={{ pl: "0" }}>
+                <LinkedInIcon
+                  sx={{
+                    height: "40px",
+                    width: "40px",
+                    color: "white",
+                  }}
+                />
+              </IconButton>
+              <IconButton>
+                <GitHubIcon
+                  sx={{
+                    height: "40px",
+                    width: "40px",
+                    color: "white",
+                  }}
+                />
+              </IconButton>
+              <IconButton>
+                <FacebookIcon
+                  sx={{ height: "40px", width: "40px", color: "white" }}
+                />
+              </IconButton>
             </Box>
           </Box>
         </Box>
