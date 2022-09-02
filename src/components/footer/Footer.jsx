@@ -4,7 +4,6 @@ import CopyrightIcon from "@mui/icons-material/Copyright";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
 
 const mapstyling = {
   border: "0",
@@ -12,27 +11,29 @@ const mapstyling = {
 
 function Footer() {
   return (
-    <Box sx={{ backgroundColor: "#080020" }}>
+    <Box sx={{ backgroundColor: "#080020", width: "100%" }}>
       <Box
         sx={{
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
+          width: "100%",
         }}
       >
         <Box
           sx={{
-            padding: "2rem",
+            padding: "4rem",
             display: "flex",
-            margin: "1rem",
             flexWrap: "wrap",
-            justifyContent: "space-around",
+            justifyContent: "center",
+            width: "100%",
           }}
         >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2866.198258585644!2d11.990865735479428!3d57.70999836278882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ff30de9cbee3d%3A0xbb3f902b63916df6!2sMedieinstitutet!5e0!3m2!1ssv!2sse!4v1662019796756!5m2!1ssv!2sse"
             width="600"
-            height="450"
+            maxwidth="auto"
+            height="auto"
             style={mapstyling}
             allowfullscreen="true"
             loading="lazy"
@@ -40,7 +41,7 @@ function Footer() {
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
           <Box sx={{ p: "2rem" }}>
-            <Box sx={{}}>
+            <Box>
               <Typography
                 variant="h6"
                 sx={{ fontWeight: "bolder", color: "white" }}
@@ -56,7 +57,7 @@ function Footer() {
               <Typography sx={{ color: "white" }}>416 64 Göteborg</Typography>
             </Box>
 
-            <Box sx={{ pt: "4rem" }}>
+            <Box sx={{ pt: "3rem" }}>
               <Typography variant="h6" sx={{ color: "white" }}>
                 Let's get in touch
               </Typography>
@@ -70,14 +71,23 @@ function Footer() {
             <Box
               sx={{
                 display: "flex",
-                justifyContent: "space-between",
               }}
             >
               <LinkedInIcon
-                sx={{ height: "40px", width: "40px", color: "white" }}
+                sx={{
+                  height: "40px",
+                  width: "40px",
+                  color: "white",
+                  pr: "1rem",
+                }}
               />
               <GitHubIcon
-                sx={{ height: "40px", width: "40px", color: "white" }}
+                sx={{
+                  height: "40px",
+                  width: "40px",
+                  color: "white",
+                  pr: "1rem",
+                }}
               />
               <FacebookIcon
                 sx={{ height: "40px", width: "40px", color: "white" }}
