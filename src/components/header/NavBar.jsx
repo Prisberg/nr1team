@@ -18,6 +18,9 @@ const Hamburgermenu = {
     display: "flex",
   },
   mr: "0.5rem",
+  "&:hover": {
+    color: "#A51D57",
+  },
 };
 
 const font = {
@@ -143,8 +146,8 @@ function NavBar() {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                backgroundColor: "red",
-                mr: "1rem",
+                m: "0",
+                p: "0",
               }}
               onClick={handleCloseNavMenu}
             >
