@@ -11,6 +11,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { usePortfolioContext } from "../../utils/PortfolioContext";
 import { Alert, Snackbar } from "@mui/material";
+import { useRef } from "react";
 
 const pages = ["Home", "Cases", "Team", "Contact", "Login"];
 
@@ -49,6 +50,7 @@ function NavBar() {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [open, setOpen] = useState(false);
+  const titleRef = useRef();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
