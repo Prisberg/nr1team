@@ -48,10 +48,7 @@ function Footer() {
                 variant="h6"
                 sx={{ fontWeight: "bolder", color: "white" }}
               >
-                Nr 1 TEAM
-              </Typography>
-              <Typography sx={{ fontWeight: "bolder", color: "white" }}>
-                For smart web designs
+                PHIEE
               </Typography>
               <Typography sx={{ color: "white" }}>
                 Anders Personsgatan 18
@@ -63,12 +60,8 @@ function Footer() {
               <Typography variant="h6" sx={{ color: "white" }}>
                 Let's get in touch
               </Typography>
-              <Typography sx={{ color: "white" }}>
-                Email: nr1team@gmail.com
-              </Typography>
-              <Typography sx={{ color: "white" }}>
-                Phone: 070 666 666
-              </Typography>
+              <Typography sx={{ color: "white" }}>phiee@gmail.com</Typography>
+              <Typography sx={{ color: "white" }}>070 666 666</Typography>
             </Box>
             <Box
               sx={{
