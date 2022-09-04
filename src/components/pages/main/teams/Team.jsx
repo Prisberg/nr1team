@@ -1,10 +1,10 @@
-import { Box, Button, Typography, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, useMediaQuery, IconButton, Link } from '@mui/material';
-import { useEffect, useState } from 'react';
-import { team } from '../../../../assets/teamData';
 import CloseIcon from '@mui/icons-material/Close';
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Box, Dialog, DialogActions, DialogContent, DialogContentText, IconButton, Link, Typography } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { ReactComponent as InfoIcon } from "../../../../assets/images/infoIcon.svg";
+import { team } from '../../../../assets/teamData';
 
 
 function Team() {
@@ -13,12 +13,11 @@ function Team() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
-    setSelectedDev({})
+    setTimeout(() => setSelectedDev({}), 100)
   }
 
   useEffect(() => {
     if (selectedDev.name) {
-      console.log(selectedDev);
       handleOpen();
     }
   }, [selectedDev])
@@ -30,21 +29,26 @@ function Team() {
 
   return (
     <Box sx={teamBox}>
-      <Box>
-        <Typography sx={header} variant='h3'>Our Team</Typography>
-      </Box>
       <Box sx={allPersonsBox}>
         {team.map(person => (
           <Box
             key={person.name}
             sx={singlePersonBox}>
             <Box
-              onClick={() => handleClick(person.name)}
-              component="img"
-              sx={avatarStyle}
-              alt={person.name}
-              src={person.image} />
-            <Typography variant='h6'>{person.name}</Typography>
+              sx={avatarShield}>
+              <Box
+                onClick={() => handleClick(person.name)}
+                component="img"
+                sx={avatarImage}
+                alt={person.name}
+                src={person.image} />
+              <IconButton
+                onClick={() => handleClick(person.name)}
+                style={infoButton} >
+                <InfoIcon />
+              </IconButton>
+            </Box>
+            <Typography sx={nameTagStyle} variant='h5'>{person.name}</Typography>
           </Box>
         ))}
         <Dialog
@@ -79,19 +83,25 @@ function Team() {
 
 export default Team;
 
-const header = {
-  fontSize: { xs: '36px', sm: '64px', md: '100px' },
-  fontWeight: 'bold',
-  color: '#1F271B'
+const infoButton = {
+  position: 'relative',
+  left: '70%',
+  bottom: '23%'
+}
+
+const nameTagStyle = {
+  fontFamily: "Montserrat",
+  color: '#FFFFFF'
 }
 
 const teamBox = {
+  userSelect: 'none',
   display: 'flex',
-  padding: '50px 0',
+  padding: '5rem 0',
   alignItems: 'center',
   flexDirection: 'column',
   gap: '3rem',
-  background: '#EDE6E3'
+  background: '#001220'
 }
 
 const allPersonsBox = {
@@ -99,7 +109,7 @@ const allPersonsBox = {
   alignItems: 'center',
   justifyContent: 'center',
   flexDirection: 'row',
-  gap: { xs: '1rem', md: '3rem' },
+  gap: { xs: '1rem', sm: '2rem', md: '4rem' },
   flexWrap: 'wrap'
 }
 
@@ -117,13 +127,20 @@ const singlePersonBox = {
   gap: '1rem',
 }
 
-const avatarStyle = {
-  background: '#1F271B',
-  border: 'solid 5px #F06449',
-  width: { xs: '150px', md: '200px' },
-  height: { xs: '150px', md: '200px' },
-  objectFit: 'cover',
+const avatarShield = {
+  border: 'solid 10px #C62368',
   borderRadius: '50%',
+  width: { xs: '150px', md: '200px' },
+  height: { xs: '180px', md: '230px' },
+}
+
+const avatarImage = {
+  borderRadius: '50%',
+  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.64);',
+  objectFit: 'cover',
+  width: { xs: '150px', md: '200px' },
+  height: { xs: '180px', md: '230px' },
+  background: '#1F271B',
   textAlign: 'center',
   color: 'white',
   '&:hover': {
@@ -132,7 +149,7 @@ const avatarStyle = {
 }
 
 const linkIconStyle = {
-  color: '#F06449',
+  color: '#C62368',
   height: "40px",
   width: "40px"
 }
