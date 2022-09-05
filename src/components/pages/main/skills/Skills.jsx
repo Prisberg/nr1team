@@ -176,10 +176,10 @@ const mainTitle = {
 const shapeStyle = {
   fontSize: { xs: '2em', md: '3em', lg: '4em', xl: '4em'},
   position: "absolute",
-  top: { xs: '0em', md: `.5em`, lg: `.5em`, xl: `0em`},
-  right: { xs: '0em', md: "3em", lg: "3em", xl: "2em"},
-  width:  { xs: '250px', md: "250px", lg: "350px", xl: "300px"},
-  height:  { xs: '250px', md: "250px", lg: "350px", xl: "300px"},
+  top: { xs: '0em', md: `0em`, lg: `0em`, xl: `0em`},
+  right: { xs: '0em', md: "1em", lg: "2em", xl: "2em"},
+  width:  { xs: '250px', md: "250px", lg: "300px", xl: "300px"},
+  height:  { xs: '250px', md: "250px", lg: "300px", xl: "300px"},
 }
 
 const mainTitleMobile = {
@@ -267,7 +267,7 @@ const skills = [
     img: `${UX}`,
     imgM: `${UXM}`,
     title: 'UX Design',
-    url: '/UxDesign',
+    url: 'expertise/UxDesign',
     dis: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. '
   },
   {
@@ -275,7 +275,7 @@ const skills = [
     img:` ${JS}`,
     imgM:` ${JSM}`,
     title: 'JavaScript',
-    url: '/JavaScript',
+    url: 'expertise/JavaScript',
     dis: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. '
   },
   {
@@ -283,7 +283,7 @@ const skills = [
     img: `${ReactImg}`,
     imgM: `${ReactImgM}`,
     title: 'React',
-    url: '/ReactInfo',
+    url: 'expertise/ReactInfo',
     dis: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. '
   },
   {
@@ -291,7 +291,7 @@ const skills = [
     img: `${node}`,
     imgM: `${nodeM}`,
     title: 'nodJS',
-    url: '/Node',
+    url: 'expertise/Node',
     dis: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. '
   },
   {
@@ -299,7 +299,7 @@ const skills = [
     img: `${Mongo}`,
     imgM: `${MongoM}`,
     title: 'MongoDB',
-    url: '/Mongo',
+    url: 'expertise/Mongo',
     dis: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. '
   },
 ];
