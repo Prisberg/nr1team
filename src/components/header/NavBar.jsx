@@ -11,8 +11,10 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { usePortfolioContext } from "../../utils/PortfolioContext";
 import { Alert, Snackbar } from "@mui/material";
+import { useRef } from "react";
+import icon from "../../assets/images/icon.svg";
 
-const pages = ["Home", "About", "Cases", "Team", "Contact"];
+const pages = ["Home", "Cases", "Team", "Contact", "Login"];
 
 const Hamburgermenu = {
   display: "none",
@@ -49,6 +51,7 @@ function NavBar() {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [open, setOpen] = useState(false);
+  const titleRef = useRef();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -58,22 +61,28 @@ function NavBar() {
   };
 
   function logOut() {
-    window.localStorage.setItem('loggedIn', 'false');
+    window.localStorage.setItem("loggedIn", "false");
     window.location.reload();
   }
 
   useEffect(() => {
     if (loggedIn) {
-      setOpen(true)
+      setOpen(true);
     }
-  }, [loggedIn])
+  }, [loggedIn]);
 
   function handleClose() {
-    setOpen(false)
+    setOpen(false);
   }
 
   return (
-    <Box sx={{ flexGrow: 1, backgroundColor: "transparent", zIndex: "100" }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        backgroundColor: "transparent",
+        zIndex: "100",
+      }}
+    >
       <AppBar
         sx={{
           mt: "1.5rem",
@@ -85,16 +94,28 @@ function NavBar() {
         elevation={0}
       >
         <Toolbar>
+          <Box
+            component="img"
+            src={icon}
+            sx={{
+              height: "1.6rem",
+              width: "2rem",
+              ml: "2rem",
+              mb: "0.3rem",
+              mr: "0.3rem",
+              "@media (max-width: 450px)": {
+                ml: "1rem",
+              },
+            }}
+            loading="lazy"
+          />
           <Typography
             onClick={() => navigate("/")}
             variant="h4"
             component="div"
             sx={{
-              "@media (max-width: 800px)": {
-                ml: "2rem",
-              },
+              "@media (max-width: 800px)": {},
               flexGrow: 1,
-              ml: "4rem",
               fontWeight: "bold",
               "&:hover": {
                 color: "#A51D57",
@@ -106,13 +127,6 @@ function NavBar() {
           <Box sx={Nav}>
             <Button sx={font} color="inherit" onClick={() => navigate("/")}>
               Home
-            </Button>
-            <Button
-              sx={font}
-              onClick={() => navigate("/about")}
-              color="inherit"
-            >
-              About
             </Button>
             <Button
               sx={font}
@@ -132,14 +146,19 @@ function NavBar() {
             >
               Contact
             </Button>
-
-            {loggedIn ?
+            {loggedIn ? (
               <Button onClick={logOut} color="inherit">
                 Log out
-              </Button> :
-              <Button onClick={() => navigate("/login")} color="inherit">
-                Log in
-              </Button>}
+              </Button>
+            ) : (
+              <Button
+                sx={font}
+                onClick={() => navigate("/login")}
+                color="inherit"
+              >
+                Login
+              </Button>
+            )}
           </Box>
           <IconButton
             size="large"
@@ -149,9 +168,14 @@ function NavBar() {
             sx={Hamburgermenu}
             onClick={handleOpenNavMenu}
           >
-            <MenuIcon sx={{ fontSize: "2.5rem" }} />
+            <MenuIcon
+              sx={{
+                fontSize: "2.5rem",
+              }}
+            />
           </IconButton>
           <Menu
+            disableScrollLock={true}
             id="menu-appbar"
             anchorEl={anchorElNav}
             anchorOrigin={{
@@ -170,10 +194,11 @@ function NavBar() {
             }}
           >
             <MenuItem
+              dense="true"
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                m: "0",
+                overFlow: "scroll",
                 p: "0",
               }}
               onClick={handleCloseNavMenu}
@@ -187,22 +212,22 @@ function NavBar() {
               </Button>
               <Button
                 color="inherit"
-                onClick={() => navigate("/about")}
+                onClick={() => navigate("/cases")}
                 textAlign="center"
               >
                 {pages[1]}
               </Button>
-              <Button
-                color="inherit"
-                onClick={() => navigate("/cases")}
-                textAlign="center"
-              >
+              <Button color="inherit" onClick={() => navigate("/team")}>
                 {pages[2]}
               </Button>
-              <Button color="inherit" onClick={() => navigate("/team")}>
+              <Button color="inherit" onClick={() => navigate("/contact")}>
                 {pages[3]}
               </Button>
-              <Button color="inherit" onClick={() => navigate("/contact")}>
+              <Button
+                color="inherit"
+                onClick={() => navigate("/about")}
+                textAlign="center"
+              >
                 {pages[4]}
               </Button>
             </MenuItem>
@@ -210,11 +235,11 @@ function NavBar() {
         </Toolbar>
       </AppBar>
       <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
           Welcome {username}!
         </Alert>
       </Snackbar>
-    </Box >
+    </Box>
   );
 }
 
