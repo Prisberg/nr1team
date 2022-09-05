@@ -1,27 +1,32 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import { Box, Typography, Button } from '@mui/material';
-import FigmaImg from './Skill-imgs/figma.png'
-import UX from './Skill-imgs/UX.png'
-import JS from './Skill-imgs/JS.png'
-import ReactImg from './Skill-imgs/React.png'
-import node from './Skill-imgs/node.png'
-import Mongo from './Skill-imgs/Mongo.png'
+import {Link} from 'react-router-dom'
+import { Box, Typography, Avatar } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Pagination, EffectCoverflow } from 'swiper';
-import MoreIcon from '@mui/icons-material/More';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import "./Skills.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+//img 
+import UX from '../../../../assets/images/ux.png'
+import JS from  '../../../../assets/images/javascript.png'
+import ReactImg from  '../../../../assets/images/react.png'
+import node from  '../../../../assets/images/node.png'
+import Mongo from  '../../../../assets/images/mongo.png'
+import shape from  '../../../../assets/images/shape.png'
+//mobile img
+import UXM from '../../../../assets/images/MobileSkillsIcons/ux.png'
+import JSM from  '../../../../assets/images/MobileSkillsIcons/java.png'
+import ReactImgM from  '../../../../assets/images/MobileSkillsIcons/react.png'
+import nodeM from  '../../../../assets/images/MobileSkillsIcons/node.png'
+import MongoM from  '../../../../assets/images/MobileSkillsIcons/mongo.png'
 
-
+AOS.init();
 function Skills () {
-  
-
 
   const pagination = {
     clickable: true,
@@ -31,69 +36,69 @@ function Skills () {
   };
 
   return (
-    <Box sx={mainBox}>
+       <Box sx={mainBox} className="mainBox">
       <Box sx={innerBox}>
-        <Box>
-          <Typography sx={mainTitle}>Our Skills</Typography>
+        <Box data-aos="fade-in"
+             data-aos-duration="1000"
+             className="textBox"
+        >
+        <Avatar alt="" src={shape} sx={shapeStyle}/>
+          <Typography 
+            className="mainText"
+            data-aos="fade-in"       
+            sx={mainTitle}>Our <br/> expertise</Typography>
         </Box>
         <Box sx={skillsBox}>
-          <Box sx={skillBox}>
-            <Typography sx={skillTitle}>Figma</Typography>
-            <img src={FigmaImg} alt="FigmaImg" />
-            <Link to="/Figma">
-              <MoreIcon sx={infoIcon} />
-            </Link>
-          </Box>
-          <Box sx={skillBox}>
-            <Typography sx={skillTitle}>UX Design</Typography>
-            <img src={UX} alt="UX Design" />
-            <Link to="/UxDesign">
-              <MoreIcon sx={infoIcon} />
-            </Link>
-          </Box>
-          <Box sx={skillBox}>
-            <Typography sx={skillTitle}>JavaScript</Typography>
-            <img src={JS} alt="JavaScript" />
-            <Link to="/JavaScript">
-              <MoreIcon sx={infoIcon} />
-            </Link>
-          </Box>
-          <Box sx={skillBox}>
-            <Typography sx={skillTitle}>React</Typography>
-            <img src={ReactImg} alt="React" />
-            <Link to="/ReactInfo">
-              <MoreIcon sx={infoIcon} />
-            </Link>
-          </Box>
-          <Box sx={skillBox}>
-            <Typography sx={skillTitle}>nodeJS</Typography>
-            <img src={node} alt="nodJS" />
-            <Link to="/Node">
-              <MoreIcon sx={infoIcon} />
-            </Link>
-          </Box>
-          <Box sx={skillBox}>
-            <Typography sx={skillTitle}>MongoDB</Typography>
-            <img src={Mongo} alt="MongoDB" />
-            <Link to="/Mongo">
-              <MoreIcon sx={infoIcon} />
-            </Link>
-          </Box>
-          {/* {skills.map((item, index) =>(
-              <Box  sx={skillBox}>
-                <Typography sx={skillTitle}>
-                 {item.title}
-                </Typography>
-                <img src={item.img} alt={item.title} />
-                <Link to='/item.id'>
-                <MoreIcon sx={infoIcon} />
-                </Link>
-                
+        {skills.map((skill) => (
+            <Box 
+              sx={skillBox} 
+              key={skill.id} 
+              >
+              <Box  
+              data-aos="fade-right"
+              data-aos-offset="200"
+              data-aos-duration="1000"
+              >
+                <img src={skill.img} alt="" />
               </Box>
-            ))} */}
+             <Box sx={skillInfo} 
+             data-aos="fade-left"
+             data-aos-offset="200"
+             data-aos-delay="50"
+             data-aos-duration="1000"
+             >
+             <Box>
+                <Typography  sx={skillTitle}>
+                  {skill.title}
+                </Typography>
+              </Box>
+              <Box>
+                <Typography  sx={skillDis}>
+                  {skill.dis} 
+                </Typography>
+              </Box>
+              <Box sx={more}>
+                  <Link to={skill.url} style={{textDecoration: 'none', color: '#f1f1f1'}}>
+               <Typography sx={{  
+                fontSize: '1.2em', fontWeight: 'bold' 
+                }}>
+                 Read more
+               </Typography>
+                  </Link>
+             </Box>
+             </Box>
+            </Box>
+          ))}
         </Box>
       </Box>
+
       <Box className="mobileMainBox" sx={skillBoxMobile}>
+          <Box >
+          <Avatar alt="" src={shape} sx={shapeStyleMobile}/>
+            <Typography  sx={mainTitleMobile}>
+            Our <br/> expertise
+            </Typography>
+          </Box>
         <Swiper
           spaceBetween={50}
           initialSlide={0}
@@ -115,22 +120,24 @@ function Skills () {
           {skills.map((skill) => (
             <SwiperSlide key={skill.id} className="slider">
               <Box>
-                <Typography sx={mainTitleMobile}>Our Skills</Typography>
-              </Box>
-              <Box>
+                <Box className="skill-image">
+                  <img src={skill.imgM} alt="" />
+                </Box>
                 <Box className="skill-info">
                   <h1>{skill.title}</h1>
                 </Box>
-                <Box className="skill-image">
-                  <img src={skill.img} alt="" />
+                <Box className="skill-info">
+                  <p>{skill.dis}</p>
                 </Box>
-
-                <a href={skill.url} target="_blank" rel="noreferrer">
-                  <Button className="demo-button">
-                    <MoreIcon sx={infoIcon} />
-                  </Button>
-
-                </a>
+                <Box sx={more}>
+                  <Link to={skill.url} style={{textDecoration: 'none', color: '#f1f1f1'}}>
+               <Typography sx={{  
+                fontSize: '1.2em', fontWeight: 'bold' 
+                }}>
+                 Read more
+               </Typography>
+                  </Link>
+             </Box>
               </Box>
             </SwiperSlide>
           ))}
@@ -146,64 +153,107 @@ const mainBox = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  flexDirection: 'column',
   width:{ xs: '100%', md: '100%', lg: '100%', xl: '100%'},
-  height: { xs: '525px', md: '400px ', lg: '525px', xl: '525px'},
-  backgroundColor: '#EDE6E3',
+  height: { xs: '700px', md: '1220px ', lg: '1220px', xl: '1220px'},
+  backgroundColor: '#001220',
+  position: 'relative',
 }
 const innerBox = {
-  width: { xs: '96%', md: '96%', lg: '96%', xl: '96%'},
-  height: { xs: '300px', md: '300px', lg: '475px', xl: '475px'},
-  backgroundColor: '#F9F7F7',
-  borderRadius: '2em',
   display: {xs: 'none', md: 'block', lg: 'block', xl: 'block'},
-  maxWidth: '1500px',
+  width: '100%',
 }
 const mainTitle = {
-  textAlign: 'center',
-  paddingTop: { xs: '.5em', md: '.5em', lg: '.5em', xl: '.5em'},
-  fontSize: { xs: '2em', md: '3em', lg: '4em', xl: '4em'},
+  fontSize: { xs: '2em', md: '3em', lg: '3em', xl: '3em'},
   fontWeight:'bolder',
+  color: '#f1f1f1',
+  position: "absolute",
+  top: { xs: '0em', md: `2em`, lg: `2em`, xl: `2em`},
+  right: { xs: '0em', md: "3.5em", lg: "3.5em", xl: "3.5em"},
+  lineHeight: '50px',
+  // textAlign: 'center',
+}
+const shapeStyle = {
+  fontSize: { xs: '2em', md: '3em', lg: '4em', xl: '4em'},
+  position: "absolute",
+  top: { xs: '0em', md: `0em`, lg: `0em`, xl: `0em`},
+  right: { xs: '0em', md: "1em", lg: "2em", xl: "2em"},
+  width:  { xs: '250px', md: "250px", lg: "300px", xl: "300px"},
+  height:  { xs: '250px', md: "250px", lg: "300px", xl: "300px"},
 }
 
 const mainTitleMobile = {
   position: "absolute",
-  top: `1em`,
-  left: "50%",
+  top: '4.5em',
+  left: '2em',
   fontWeight: "bolder",
-  transform: "translateX(-50%)",
-  fontSize: { xs: "2em", md: "3em", lg: "4em", xl: "4em" },
+  fontSize: "1em",
+  color: '#f1f1f1',
+  zIndex: "9999",
+  width: "100%",
+};
+const shapeStyleMobile = {
+  position: "absolute",
+  top: `1em`,
+  left: '0em',
+  width: "150px",
+  height: "150px",
+  zIndex: "99",
 };
 const skillsBox = {
-  display: 'flex',
+  display: {xs: 'none', md: 'flex', lg: 'flex', xl: 'flex'},
   alignItems: 'center',
-  justifyContent: 'space-between',
-  fontSize: { xs: '', md: '', lg: '3em', xl: '3em'},
-  fontWeight:'bolder',
-  width: { xs: '95%', md: '95%', lg: '95%', xl: '95%'},
-  margin: 'auto',
-  paddingTop:  { xs: '', md: '1em', lg: '1em', xl: '1em'},
+  justifyContent: 'flex-start',
+  flexDirection: 'column',
+  width: '90%',
+  marginTop: '15em',
+  "& :nth-child(even)": {
+    justifyContent: 'flex-end'
+  },
+  "& :nth-child(odd)": {
+    paddingLeft: '.5em'
+  }
 }
 
 const skillBox = {
   display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  flexDirection: "column",
+  alignItems: 'flex-start',
+  justifyContent: 'flex-start',
   position: "relative",
+  height: "200px",
+  marginBottom: "2em",
+  width: '100%',
+};
+
+const skillInfo = {
+  width:{ xs: '', md: '450px', lg: '550px', xl: '550px'},
+  marginLeft: '2em',
+  color: '#f1f1f1',
+  position: 'relative',
+  height: "200px",
+
 };
 const skillTitle = {
   paddingBottom: { xs: '0.5em', md: '1em', lg: '.5em', xl: '.5em'},
-  fontSize: { xs: '1em', md: '1em', lg: '0.5em', xl: '0.5em'},
+  fontSize: { xs: '1em', md: '1em', lg: '1em', xl: '1em'},
+  color: '#f1f1f1',
 }
-const infoIcon = {
-  position: 'absolute',
-  bottom: {xs: '1.5em', md: '-1.5em', lg: '-1.5em', xl: '-1.5em'},
-  right: { xs: '0em', md: '0em', lg: '0em', xl: '0em'},
-  fill: '#843626',
-  fontSize: { xs: '2em', md: '1.2em', lg: '.5em', xl: '.5em'},
-  transform: 'rotate(180deg)',
+const skillDis = {
+  color: '#f1f1f1',
+}
+const more = {
+  color: '#f1f1f1',
   cursor: 'pointer',
+  position: 'absolute',
+  width: '150px',
+  right: { xs: '1em', md: "0", lg: "0", xl: "0"},
+  bottom: { xs: '5em', md: "1em", lg: "1em", xl: "1em"},
+  textDecoration: 'none',
+  "& :hover": {
+    fontSize: "1.2em"
+  },
 }
+
 const skillBoxMobile = {
   display: {xs: 'block', md: 'none', lg: 'none', xl: 'none'},
   width: { xs: '80%', md: '96%', lg: '96%', xl: '96%'},
@@ -211,43 +261,45 @@ const skillBoxMobile = {
 
 
 const skills = [
-  {
-    id: '1',
-    img:`${FigmaImg}`,
-    title: 'Figma',
-    url: '/Figma'
-  },
+  
   {
     id: "2",
     img: `${UX}`,
+    imgM: `${UXM}`,
     title: 'UX Design',
-    url: '/UxDesign'
+    url: 'expertise/UxDesign',
+    dis: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. '
   },
   {
     id: '3',
     img:` ${JS}`,
+    imgM:` ${JSM}`,
     title: 'JavaScript',
-    url: '/JavaScript'
+    url: 'expertise/JavaScript',
+    dis: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. '
   },
   {
     id: "4",
     img: `${ReactImg}`,
+    imgM: `${ReactImgM}`,
     title: 'React',
-    url: '/ReactInfo'
-
+    url: 'expertise/ReactInfo',
+    dis: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. '
   },
   {
     id: "5",
     img: `${node}`,
+    imgM: `${nodeM}`,
     title: 'nodJS',
-    url: '/Node'
-
+    url: 'expertise/Node',
+    dis: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. '
   },
   {
     id: "6",
     img: `${Mongo}`,
+    imgM: `${MongoM}`,
     title: 'MongoDB',
-    url: '/Mongo'
-
+    url: 'expertise/Mongo',
+    dis: 'Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. '
   },
 ];

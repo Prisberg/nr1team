@@ -2,10 +2,13 @@ import React from 'react'
 import { Box, Typography } from '@mui/material';
 import './skillInfo.css'
 import skillTest from '../Skill-imgs/skillTest.png'
+import headerImg from '../../../../../assets/images/skillsInfo.png'
 
 const UxDesign = () => {
   return (
     <Box sx={mainBox}  className='main-Box'>
+              <img src={headerImg} alt="" style={{width: '100%', objectFit:'cover', position: 'absolute', top: '5em', zIndex: '0' }} />
+
       <Box sx={innerBox}>
         <Box  >
         <Typography sx={mainTitle}>
@@ -44,19 +47,20 @@ const UxDesign = () => {
 const mainBox = {
   width:{ xs: '100%', md: '100%', lg: '100%', xl: '100%'},
   height:{ xs: '100%', md: '100%', llg: '100%', xl: '1300px'},
-  backgroundColor: '#EDE6E3',
+  backgroundColor: '#001220',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  color: '#f1f1f1'
 }
 const innerBox = {
   width:{ xs: '80%', md: '100%', lg: '1226px', xl: '70%'},
   height:{ xs: '80%', md: '100%', lg: '100%', xl: '1150px'},
   padding: '2em',
-  marginTop: { xs: '2em', md: '0', lg: '0', xl: '0'},
-  backgroundColor: '#F9F7F7',
+  marginTop: { xs: '2em', md: '0', lg: '0', xl: '15em'},
   paddingLeft: { xs: '0em', md: '15em', lg: '15em', xl: '15em'},
   borderRadius: '2em',
+  zIndex: '5'
 }
 const skillProjects = {
   display: 'flex',
@@ -78,7 +82,7 @@ const skillInfo = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  marginTop: '1em',
+  marginTop: '3em',
 }
 const mainTitle = {
   textAlign: { xs: 'center', md: 'left', lg: 'left', xl:'left'},
