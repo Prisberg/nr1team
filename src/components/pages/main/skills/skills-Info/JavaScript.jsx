@@ -54,18 +54,21 @@ const mainBox = {
   color: '#f1f1f1',
 }
 const innerBox = {
-  padding: '2em',
+  // padding: '2em',
   marginTop: { xs: '2em', md: '0', lg: '0', xl: '15em'},
-  paddingLeft: { xs: '0em', md: '15em', lg: '15em', xl: '15em'},
-  borderRadius: '2em',
-  zIndex: '5'
+  // paddingLeft: { xs: '0em', md: '0em', lg: '15em', xl: '15em'},
+  zIndex: '5',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'column'
 }
 const skillProjects = {
   display: 'flex',
-  alignItems:{ xs: 'center', md: 'flex-start', lg: 'flex-start', xl: 'flex-start'},
+  alignItems:{ xs: 'center', md: 'center', lg: 'center', xl: 'center'},
   justifyContent: 'center',
-  width:{ xs: '380px', s: '380px', md: '500px', lg: '1226px', xl: '1226px'},
-  flexWrap: { xs: 'no-wrap', md: 'wrap', lg: 'wrap', xl: 'wrap'},
+  width:{ xs: '400px', md: '800px', lg: '1226px', xl: '1226px'},
+  flexWrap: { xs: 'wrap', md: 'wrap', lg: 'wrap', xl: 'wrap'},
   marginTop: '2em',
   flexDirection: { xs: 'column', md: 'row', lg: 'row'}
 }
