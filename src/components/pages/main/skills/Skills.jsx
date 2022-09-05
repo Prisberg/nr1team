@@ -206,7 +206,7 @@ const skillsBox = {
   justifyContent: 'flex-start',
   flexDirection: 'column',
   width: '90%',
-  marginTop: '4em',
+  marginTop: '15em',
   "& :nth-child(even)": {
     justifyContent: 'flex-end'
   },
