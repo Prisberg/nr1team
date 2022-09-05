@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import { Box, Typography, Avatar } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Pagination, EffectCoverflow } from 'swiper';
@@ -67,7 +68,6 @@ function Skills () {
              data-aos-duration="1000"
              >
              <Box>
-
                 <Typography  sx={skillTitle}>
                   {skill.title}
                 </Typography>
@@ -77,6 +77,15 @@ function Skills () {
                   {skill.dis} 
                 </Typography>
               </Box>
+              <Box sx={more}>
+                  <Link to={skill.url} style={{textDecoration: 'none', color: '#f1f1f1'}}>
+               <Typography sx={{  
+                fontSize: '1.2em', fontWeight: 'bold' 
+                }}>
+                 Read more
+               </Typography>
+                  </Link>
+             </Box>
              </Box>
             </Box>
           ))}
@@ -110,9 +119,6 @@ function Skills () {
         >
           {skills.map((skill) => (
             <SwiperSlide key={skill.id} className="slider">
-              {/* <Box>
-                <Typography sx={mainTitleMobile}>A Full stack Team</Typography>
-              </Box> */}
               <Box>
                 <Box className="skill-image">
                   <img src={skill.imgM} alt="" />
@@ -123,13 +129,15 @@ function Skills () {
                 <Box className="skill-info">
                   <p>{skill.dis}</p>
                 </Box>
-
-                {/* <a href={skill.url} target="_blank" rel="noreferrer">
-                  <Button className="demo-button">
-                    <MoreIcon sx={infoIcon} />
-                  </Button>
-
-                </a> */}
+                <Box sx={more}>
+                  <Link to={skill.url} style={{textDecoration: 'none', color: '#f1f1f1'}}>
+               <Typography sx={{  
+                fontSize: '1.2em', fontWeight: 'bold' 
+                }}>
+                 Read more
+               </Typography>
+                  </Link>
+             </Box>
               </Box>
             </SwiperSlide>
           ))}
@@ -212,7 +220,7 @@ const skillBox = {
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
   position: "relative",
-  height: "150px",
+  height: "200px",
   marginBottom: "2em",
   width: '100%',
 };
@@ -221,6 +229,9 @@ const skillInfo = {
   width:{ xs: '', md: '450px', lg: '550px', xl: '550px'},
   marginLeft: '2em',
   color: '#f1f1f1',
+  position: 'relative',
+  height: "200px",
+
 };
 const skillTitle = {
   paddingBottom: { xs: '0.5em', md: '1em', lg: '.5em', xl: '.5em'},
@@ -230,16 +241,19 @@ const skillTitle = {
 const skillDis = {
   color: '#f1f1f1',
 }
-
-const infoIcon = {
-  position: 'absolute',
-  bottom: {xs: '1.5em', md: '-1.5em', lg: '-1.5em', xl: '-1.5em'},
-  right: { xs: '0em', md: '0em', lg: '0em', xl: '0em'},
-  fill: '#843626',
-  fontSize: { xs: '2em', md: '1.2em', lg: '.5em', xl: '.5em'},
-  transform: 'rotate(180deg)',
+const more = {
+  color: '#f1f1f1',
   cursor: 'pointer',
+  position: 'absolute',
+  width: '150px',
+  right: { xs: '1em', md: "0", lg: "0", xl: "0"},
+  bottom: { xs: '5em', md: "1em", lg: "1em", xl: "1em"},
+  textDecoration: 'none',
+  "& :hover": {
+    fontSize: "1.2em"
+  },
 }
+
 const skillBoxMobile = {
   display: {xs: 'block', md: 'none', lg: 'none', xl: 'none'},
   width: { xs: '80%', md: '96%', lg: '96%', xl: '96%'},
