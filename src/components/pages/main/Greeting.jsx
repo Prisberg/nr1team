@@ -65,19 +65,25 @@ const secondslogan = {
 };
 
 const button = {
+  fontSize: "1.2rem",
+  height: "3.5rem",
+  width: "13rem",
   backgroundColor: "#A51D57",
   color: "#F1F1F1",
   mt: "1.3rem",
-  ml: "4rem",
+  ml: "4.2rem",
   fontWeight: "bold",
   "&:hover": {
     backgroundColor: "#681136",
   },
   "@media (max-width: 450px)": {
     ml: "2rem",
+    fontSize: "1rem",
+    height: "2.5rem",
+    width: "10rem",
   },
   "@media (max-width: 360px)": {
-    fontSize: "0.7rem",
+    fontSize: "1rem",
     ml: "1rem",
   },
 };
@@ -138,6 +144,26 @@ function Greeting() {
               width: "16rem",
               left: "2rem",
               top: "10rem",
+            },
+            "@media (min-width: 2000px)": {
+              width: "60rem",
+              left: "21rem",
+              top: "15rem",
+            },
+            "@media (min-width: 2500px)": {
+              width: "60rem",
+              left: "30rem",
+              top: "16rem",
+            },
+            "@media (min-width: 3000px)": {
+              width: "70rem",
+              left: "60rem",
+              top: "16rem",
+            },
+            "@media (min-width: 4000px)": {
+              width: "70rem",
+              left: "100rem",
+              top: "16rem",
             },
           }}
         >

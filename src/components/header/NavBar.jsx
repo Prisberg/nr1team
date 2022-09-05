@@ -13,12 +13,13 @@ import { usePortfolioContext } from "../../utils/PortfolioContext";
 import { Alert, Snackbar } from "@mui/material";
 import { useRef } from "react";
 import icon from "../../assets/images/icon.svg";
+import ScrollIntoView from "react-scroll-into-view";
 
 const pages = ["Home", "Cases", "Team", "Contact", "Login"];
 
 const Hamburgermenu = {
   display: "none",
-  "@media (max-width: 730px)": {
+  "@media (max-width: 750px)": {
     display: "flex",
   },
   mr: "0.5rem",
@@ -40,7 +41,7 @@ const font = {
 
 const Nav = {
   display: "flex",
-  "@media (max-width: 730px)": {
+  "@media (max-width: 750px)": {
     display: "none",
   },
   mr: "2rem",
@@ -81,11 +82,14 @@ function NavBar() {
         flexGrow: 1,
         backgroundColor: "transparent",
         zIndex: "100",
+        display: "flex",
+        justifyContent: "center",
       }}
     >
       <AppBar
         sx={{
           mt: "1.5rem",
+          maxWidth: "2000px",
           flexGrow: 1,
           backgroundColor: "transparent",
           color: "#F1F1F1",
@@ -128,16 +132,28 @@ function NavBar() {
             <Button sx={font} color="inherit" onClick={() => navigate("/")}>
               Home
             </Button>
-            <Button
-              sx={font}
-              onClick={() => navigate("/cases")}
-              color="inherit"
+            <ScrollIntoView
+              scrollOptions={{
+                behavior: "smooth",
+                block: "center",
+                inline: "nearest",
+              }}
+              selector="#team"
             >
-              Cases
-            </Button>
-            <Button sx={font} onClick={() => navigate("/team")} color="inherit">
-              Team
-            </Button>
+              <Button sx={font} color="inherit">
+                Team
+              </Button>
+            </ScrollIntoView>
+            <ScrollIntoView selector="#skills">
+              <Button sx={font} color="inherit">
+                Skills
+              </Button>
+            </ScrollIntoView>
+            <ScrollIntoView selector="#cases">
+              <Button sx={font} color="inherit">
+                Cases
+              </Button>
+            </ScrollIntoView>
 
             <Button
               sx={font}

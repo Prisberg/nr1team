@@ -41,6 +41,7 @@ const imglist = {
 function Cases() {
   return (
     <Box
+      id="cases"
       sx={{
         display: "flex",
         alignItems: "center",
