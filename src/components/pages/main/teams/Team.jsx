@@ -163,6 +163,8 @@ const dialogContentStyle = {
 }
 
 const selectedDevImage = {
+  pointerEvents: 'none',
+  userSelect: 'none',
   objectFit: 'cover',
   width: { xs: '230px', sm: '350px', md: '450px' },
   height: { xs: '230px', sm: '350px', md: '450px' },
