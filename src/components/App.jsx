@@ -13,6 +13,8 @@ import Footer from "./footer/Footer";
 import Main from "./pages/main/Main";
 import Team from "./pages/main/teams/Team";
 import Confirm from "./pages/contact/Confirm";
+import Cases from "./pages/cases/Cases";
+import Skills from "./pages/main/skills/Skills";
 
 function App() {
   const { loggedIn } = usePortfolioContext();
@@ -32,6 +34,8 @@ function App() {
           <Route path="expertise/UxDesign" element={<UxDesign />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/cases" element={<Cases />} />
           <Route path="/confirm" element={<Confirm />} />
         </Routes>
         <Footer />

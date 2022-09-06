@@ -70,7 +70,7 @@ const button = {
   width: "13rem",
   backgroundColor: "#A51D57",
   color: "#F1F1F1",
-  mt: "1.3rem",
+  mt: "2rem",
   ml: "4.2rem",
   fontWeight: "bold",
   "&:hover": {
@@ -112,7 +112,7 @@ function Greeting() {
         <Box
           sx={{
             position: "absolute",
-            top: "19rem",
+            top: "18rem",
             left: "8rem",
             width: "57rem",
             "@media (max-width: 1250px)": {
@@ -122,13 +122,13 @@ function Greeting() {
             },
             "@media (max-width: 1120px)": {
               width: "46rem",
-              top: "17rem",
+              top: "14rem",
               left: "7rem",
             },
             "@media (max-width: 880px)": {
               left: "5rem",
               width: "30rem",
-              top: "15rem",
+              top: "12rem",
             },
             "@media (max-width: 580px)": {
               width: "20rem",

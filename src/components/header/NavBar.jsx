@@ -11,11 +11,9 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { usePortfolioContext } from "../../utils/PortfolioContext";
 import { Alert, Snackbar } from "@mui/material";
-import { useRef } from "react";
 import icon from "../../assets/images/icon.svg";
-import ScrollIntoView from "react-scroll-into-view";
 
-const pages = ["Home", "Cases", "Team", "Contact", "Login"];
+// const pages = ["Home", "Team", "Skills", "Cases", "Contact", "Login"];
 
 const Hamburgermenu = {
   display: "none",
@@ -52,7 +50,6 @@ function NavBar() {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [open, setOpen] = useState(false);
-  const titleRef = useRef();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -132,29 +129,23 @@ function NavBar() {
             <Button sx={font} color="inherit" onClick={() => navigate("/")}>
               Home
             </Button>
-            <ScrollIntoView
-              scrollOptions={{
-                behavior: "smooth",
-                block: "center",
-                inline: "nearest",
-              }}
-              selector="#team"
+            <Button onClick={() => navigate("/team")} sx={font} color="inherit">
+              Team
+            </Button>
+            <Button
+              onClick={() => navigate("/skills")}
+              sx={font}
+              color="inherit"
             >
-              <Button sx={font} color="inherit">
-                Team
-              </Button>
-            </ScrollIntoView>
-            <ScrollIntoView selector="#skills">
-              <Button sx={font} color="inherit">
-                Skills
-              </Button>
-            </ScrollIntoView>
-            <ScrollIntoView selector="#cases">
-              <Button sx={font} color="inherit">
-                Cases
-              </Button>
-            </ScrollIntoView>
-
+              Skills
+            </Button>
+            <Button
+              onClick={() => navigate("/cases")}
+              sx={font}
+              color="inherit"
+            >
+              Cases
+            </Button>
             <Button
               sx={font}
               onClick={() => navigate("/contact")}
@@ -190,6 +181,7 @@ function NavBar() {
               }}
             />
           </IconButton>
+
           <Menu
             disableScrollLock={true}
             id="menu-appbar"
@@ -214,8 +206,6 @@ function NavBar() {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                overFlow: "scroll",
-                p: "0",
               }}
               onClick={handleCloseNavMenu}
             >
@@ -224,27 +214,30 @@ function NavBar() {
                 onClick={() => navigate("/")}
                 textAlign="center"
               >
-                {pages[0]}
+                Home
               </Button>
+
               <Button
+                onClick={() => navigate("/team")}
                 color="inherit"
-                onClick={() => navigate("/cases")}
                 textAlign="center"
               >
-                {pages[1]}
+                Team
               </Button>
-              <Button color="inherit" onClick={() => navigate("/team")}>
-                {pages[2]}
+
+              <Button onClick={() => navigate("/skills")} color="inherit">
+                Skills
               </Button>
+
               <Button color="inherit" onClick={() => navigate("/contact")}>
-                {pages[3]}
+                Contact
               </Button>
               <Button
+                onClick={() => navigate("/login")}
                 color="inherit"
-                onClick={() => navigate("/about")}
                 textAlign="center"
               >
-                {pages[4]}
+                Login
               </Button>
             </MenuItem>
           </Menu>
