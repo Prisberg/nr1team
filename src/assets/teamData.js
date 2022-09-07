@@ -8,10 +8,10 @@ export const team = [
   {
     name: "Philip Risberg",
     image: `${philip}`,
-    about: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-       Duisaute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    about: `I am a student at Medieinstitutet in Gothenburg where I am studying to become a Front End Developer. My long term goal is to make a living doing what I love, which is to be creative. I am very motivated by challenging myself and taking on responsibilities, which is in large part why I moved to Gothenburg from Scania for this education.
+    This far into my education I have aquired the basics in Html, CSS3 and Javascript. I have worked with React, Typescript, Express, CSS-in-JS, MUI and more. I have also completed a course on UX design. What I would love now is some hands-on experience in the actual working life of a web developer.
+    As a person I am calm, curious and friendly. My interest lies in anything tech related, creative, challenging and adventurous. Examples include strength training, drawing and some amateur level photography.
+    If you would like to find out more about me or get in contact all relevant links are below.`,
     github: "https://github.com/Prisberg",
     linkedin: "https://www.linkedin.com/in/philip-risberg/",
   },
