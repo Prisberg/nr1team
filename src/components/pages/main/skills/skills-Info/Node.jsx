@@ -61,20 +61,21 @@ const mainBox = {
 const innerBox = {
   marginTop: { xs: '2em', md: '1em', lg: '1em', xl: '1em'},
   display: 'flex',
-  // alignItems: 'center',
   justifyContent: 'center',
   flexDirection: 'column',
 
- 
 }
 const skillProjects = {
   display: 'flex',
   alignItems:{ xs: 'center', md: 'center', lg: 'center', xl: 'center'},
   justifyContent: 'center',
-  width:{ xs: '400px', md: '800px', lg: '1226px', xl: '1226px'},
+  width:{ xs: '375px', md: '800px', lg: '1226px', xl: '1226px'},
   flexWrap: { xs: 'wrap', md: 'wrap', lg: 'wrap', xl: 'wrap'},
   marginTop: '2em',
-  flexDirection: { xs: 'column', md: 'row', lg: 'row'}
+  flexDirection: { xs: 'column', md: 'row', lg: 'row'},
+  "@media (max-width: 320px)": {
+    width: "310px",
+  },
 }
 const  projectBox = {
  flex: '50%',
@@ -83,18 +84,21 @@ const  projectBox = {
  borderRadius: '2em',
 }
 const skillInfo = {
-  width:{ xs: '100%', md: '500px', lg: '500px', xl: '970px'},
+  width:{ xs: '360px', md: '500px', lg: '500px', xl: '970px'},
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   marginTop: '3em',
+  "@media (max-width: 320px)": {
+    width: "300px",
+  },
 }
 const mainTitle = {
   textAlign: { xs: 'center', md: 'left', lg: 'left', xl:'left'},
   fontSize: { xs: '2em', md: '2em', lg: '2em', xl: '4em'},
 }
 const skillInfoText = {
-  fontSize: '1.3em',
+  fontSize: {xs: '1em', md: '1em', lg: '1.3em', xl: '1.3em'},
   paddingLeft: {xs: '20px', md: '0px', lg: '0px', xl: '0px'}
 }
 
