@@ -28,10 +28,10 @@ function App() {
           <Route path="/login" element={loggedIn ? null : <Login />} />
           <Route path="/register" element={loggedIn ? null : <Register />} />
           <Route path="/Node" element={<Node />} />
-          <Route path="expertise/JavaScript" element={<JavaScript />} />
-          <Route path="expertise/Mongo" element={<Mongo />} />
-          <Route path="expertise/ReactInfo" element={<ReactInfo />} />
-          <Route path="expertise/UxDesign" element={<UxDesign />} />
+          <Route path="/JavaScript" element={<JavaScript />} />
+          <Route path="/Mongo" element={<Mongo />} />
+          <Route path="/ReactInfo" element={<ReactInfo />} />
+          <Route path="/UxDesign" element={<UxDesign />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/team" element={<Team />} />
           <Route path="/skills" element={<Skills />} />

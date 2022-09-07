@@ -7,7 +7,9 @@ import {
   Button,
 } from "@mui/material";
 
-import {useState} from "react";
+import { useState } from "react";
+
+import "./dialog.css";
 
 export const DialogMui = () => {
   const [open, setOpen] = useState(true)
