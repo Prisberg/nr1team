@@ -34,7 +34,7 @@ function Footer() {
           flexWrap: "wrap",
           mt: "2rem",
           mb: "3rem",
-          maxWidth: "100rem",
+          maxWidth: "100%",
         }}
       >
         <iframe
