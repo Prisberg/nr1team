@@ -2,6 +2,8 @@ import { Alert, Box, Button, Link, Snackbar, TextField, Typography } from "@mui/
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { usePortfolioContext } from "../../../utils/PortfolioContext";
+import greetingImg from "../../../assets/images/greeting-background.svg";
+
 
 function Login() {
     const { email, password, extractLocalStorage } = usePortfolioContext();
@@ -28,62 +30,100 @@ function Login() {
     }
 
     return (
-        <form
-            style={loginForm}
-            onSubmit={(e) => handleSubmit(e)}>
-            <Box sx={loginMainBox}>
-                <Typography sx={header} variant='h3'>Log In</Typography>
-                <Box sx={loginSecondBox}>
-                    <TextField
-                        onChange={(e) => setStateEmail(e.target.value)}
-                        value={emailState}
-                        name="email"
-                        label="Email"
-                        fullWidth
-                        required
-                    />
-                    <TextField
-                        onChange={(e) => setStatePassword(e.target.value)}
-                        value={passwordState}
-                        name="password"
-                        label="Password"
-                        autoComplete="off"
-                        fullWidth
-                        required
-                    />
-                    <Button
-                        variant="contained"
-                        type="submit"
-                    >
-                        Log In
-                    </Button>
-                    <Typography>Don't have an account? <Link href="/register">Create account.</Link></Typography>
+        <>
+            <Box sx={mainBox}></Box>
+            <form
+                style={formStyle}
+                onSubmit={(e) => handleSubmit(e)}>
+                <Box sx={formMainBox}>
+                    <Typography sx={header} variant='h3'>Log In</Typography>
+                    <Box sx={formSecondBox}>
+                        <TextField
+                            variant="filled"
+                            onChange={(e) => setStateEmail(e.target.value)}
+                            value={emailState}
+                            sx={textInputStyle}
+                            name="email"
+                            label="Email"
+                            fullWidth
+                            required
+                        />
+                        <TextField
+                            variant="filled"
+                            onChange={(e) => setStatePassword(e.target.value)}
+                            value={passwordState}
+                            sx={textInputStyle}
+                            name="password"
+                            label="Password"
+                            autoComplete="off"
+                            fullWidth
+                            required
+                        />
+                        <Button
+                            variant="contained"
+                            type="submit"
+                            sx={buttonStyle}
+                        >
+                            Log In
+                        </Button>
+                        <Typography color="white">Don't have an account? <Link href="/register">Create account.</Link></Typography>
+                    </Box>
                 </Box>
-            </Box>
-            <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
-                <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
-                    Wrong email or password
-                </Alert>
-            </Snackbar>
-        </form>
+                <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
+                    <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                        Wrong email or password
+                    </Alert>
+                </Snackbar>
+            </form>
+        </>
     )
 }
 
 export default Login;
 
-const header = {
-    fontSize: { xs: '36px', sm: '64px', md: '100px' },
-    fontWeight: 'bold',
-    color: '#1F271B'
+const buttonStyle = {
+    background: { xs: '#4C0B26', sm: '#C62368' },
+    fontSize: "1.2rem",
+    "&:hover": {
+        background: { xs: '#C62368', sm: '#4C0B26' },
+    },
 }
 
-const loginForm = {
+const header = {
+    fontSize: { xs: '36px', sm: '48px' },
+    fontWeight: 'bold',
+    fontFamily: 'montserrat',
+    color: 'white'
+}
+
+const textInputStyle = {
+    background: 'white',
+    borderRadius: '0.5rem'
+}
+
+const mainBox = {
+    top: '0',
+    zIndex: '-1',
+    position: 'absolute',
+    height: '800px',
+    backgroundColor: '#001220',
+    backgroundImage: `url("${greetingImg}")`,
+    backgroundPosition: 'right',
+    backgroundRepeat: 'no-repeat',
+    width: '100%',
+    maxWidth: '1920px',
+    margin: '0 auto'
+}
+
+const formStyle = {
     display: 'flex',
     alignItems: 'center',
-    width: '100%'
+    width: '100%',
+    maxWidth: '1920px',
+    margin: '0 auto'
 }
 
-const loginMainBox = {
+const formMainBox = {
     display: 'flex',
     padding: '50px 0',
     alignItems: 'center',
@@ -91,7 +131,7 @@ const loginMainBox = {
     gap: '3rem',
 }
 
-const loginSecondBox = {
+const formSecondBox = {
     width: { xs: '300px', lg: 'max-content' },
     display: 'flex',
     alignItems: 'center',
