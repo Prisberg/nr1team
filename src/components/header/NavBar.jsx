@@ -237,11 +237,7 @@ function NavBar() {
                   Log out
                 </Button>
               ) : (
-                <Button
-                  sx={font}
-                  onClick={() => navigate("/login")}
-                  color="inherit"
-                >
+                <Button onClick={() => navigate("/login")} color="inherit">
                   Login
                 </Button>
               )}
