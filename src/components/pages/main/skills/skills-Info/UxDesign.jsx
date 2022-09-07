@@ -5,12 +5,12 @@ import volvo from "../../../../../assets/images/volvo.png";
 import design from "../../../../../assets/images/design.jpg";
 import apple from "../../../../../assets/images/apple.png";
 import poc from "../../../../../assets/images/poc.png";
+
 import headerImg from '../../../../../assets/images/skillsInfo.png'
 
 const UxDesign = () => {
   return (
     <Box sx={mainBox}  className='main-Box'>
-
               <img src={headerImg} alt="" style={imgStyling} />
       <Box sx={innerBox}>
         <Box  >
