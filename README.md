@@ -1,4 +1,4 @@
-# Nr 1 Team 🥇
+# PHIEE 🥇
 
 School assignment in agile work methods.
 
@@ -25,7 +25,7 @@ School assignment in agile work methods.
   Webbplats
 - Animationer används för att förstärka presentationen <br> <br>
 
-## Demo 👉🏻 https://nr1team.netlify.app/ 👈🏻
+## Demo 👉🏻 https://phiee.netlify.app/ 👈🏻
 
 <br>
 
