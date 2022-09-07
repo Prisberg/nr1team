@@ -151,39 +151,35 @@ function Skills() {
 export default Skills;
 
 const mainBox = {
-
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   flexDirection: 'column',
   width:{ xs: '100%', md: '100%', lg: '100%', xl: '100%'},
-  height: { xs: '700px', md: '1220px ', lg: '1220px', xl: '1220px'},
+  height: { xs: '700px', md: '1350px ', lg: '1350px', xl: '1500px'},
   backgroundColor: '#001220',
 }
 const innerBox = {
   display: {xs: 'none', md: 'block', lg: 'block', xl: 'block'},
-  width: '100%',
+  width: '90%',
   maxWidth: '1500px',
   position: 'relative',
-  paddingLeft: '2em',
+  // paddingLeft: '2em',
 
 }
 const mainTitle = {
-  fontSize: { xs: "2em", md: "3em", lg: "3em", xl: "3em" },
+  fontSize: { xs: "2em", md: "2em", lg: "3em", xl: "3em" },
   fontWeight: "bolder",
   color: "#f1f1f1",
   position: "absolute",
-  top: { xs: '0em', md: `2em`, lg: `2em`, xl: `3em`},
-  right: { xs: '0em', md: "3.5em", lg: "3.5em", xl: "3.5em"},
+  top: { xs: '0em', md: `5em`, lg: `3em`, xl: `3em`},
+  right: { xs: '0em', md: "1.5em", lg: "2em", xl: "2em"},
   lineHeight: '50px',
-  // textAlign: 'center',
 };
 const shapeStyle = {
-  fontSize: { xs: "2em", md: "3em", lg: "4em", xl: "4em" },
   position: "absolute",
-
-  top: { xs: '0em', md: `0em`, lg: `0em`, xl: `1em`},
-  right: { xs: '0em', md: "1em", lg: "2em", xl: "2em"},
+  top: { xs: '2em', md: `4em`, lg: `2em`, xl: `1em`},
+  right: { xs: '0em', md: "0em", lg: "2em", xl: "2em"},
   width:  { xs: '250px', md: "250px", lg: "300px", xl: "300px"},
   height:  { xs: '250px', md: "250px", lg: "300px", xl: "300px"},
 }
@@ -269,7 +265,7 @@ const skills = [
     img: `${UX}`,
     imgM: `${UXM}`,
     title: "UX Design",
-    url: "expertise/UxDesign",
+    url: "/UxDesign",
     dis: "Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. ",
   },
   {
@@ -277,7 +273,7 @@ const skills = [
     img: ` ${JS}`,
     imgM: ` ${JSM}`,
     title: "JavaScript",
-    url: "expertise/JavaScript",
+    url: "/JavaScript",
     dis: "Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. ",
   },
   {
@@ -285,7 +281,7 @@ const skills = [
     img: `${ReactImg}`,
     imgM: `${ReactImgM}`,
     title: "React",
-    url: "expertise/ReactInfo",
+    url: "/ReactInfo",
     dis: "Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. ",
   },
   {
@@ -293,7 +289,7 @@ const skills = [
     img: `${node}`,
     imgM: `${nodeM}`,
     title: "nodJS",
-    url: "expertise/Node",
+    url: "/Node",
     dis: "Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. ",
   },
   {
@@ -301,7 +297,7 @@ const skills = [
     img: `${Mongo}`,
     imgM: `${MongoM}`,
     title: "MongoDB",
-    url: "expertise/Mongo",
+    url: "/Mongo",
     dis: "Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. ",
   },
 ];
