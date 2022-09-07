@@ -157,18 +157,21 @@ const mainBox = {
   width:{ xs: '100%', md: '100%', lg: '100%', xl: '100%'},
   height: { xs: '700px', md: '1220px ', lg: '1220px', xl: '1220px'},
   backgroundColor: '#001220',
-  position: 'relative',
+  
 }
 const innerBox = {
   display: {xs: 'none', md: 'block', lg: 'block', xl: 'block'},
   width: '100%',
+  maxWidth: '1500px',
+  position: 'relative',
+  paddingLeft: '2em',
 }
 const mainTitle = {
   fontSize: { xs: '2em', md: '3em', lg: '3em', xl: '3em'},
   fontWeight:'bolder',
   color: '#f1f1f1',
   position: "absolute",
-  top: { xs: '0em', md: `2em`, lg: `2em`, xl: `2em`},
+  top: { xs: '0em', md: `2em`, lg: `2em`, xl: `3em`},
   right: { xs: '0em', md: "3.5em", lg: "3.5em", xl: "3.5em"},
   lineHeight: '50px',
   // textAlign: 'center',
@@ -176,7 +179,7 @@ const mainTitle = {
 const shapeStyle = {
   fontSize: { xs: '2em', md: '3em', lg: '4em', xl: '4em'},
   position: "absolute",
-  top: { xs: '0em', md: `0em`, lg: `0em`, xl: `0em`},
+  top: { xs: '0em', md: `0em`, lg: `0em`, xl: `1em`},
   right: { xs: '0em', md: "1em", lg: "2em", xl: "2em"},
   width:  { xs: '250px', md: "250px", lg: "300px", xl: "300px"},
   height:  { xs: '250px', md: "250px", lg: "300px", xl: "300px"},
@@ -184,8 +187,8 @@ const shapeStyle = {
 
 const mainTitleMobile = {
   position: "absolute",
-  top: '4.5em',
-  left: '2em',
+  top: '2em',
+  left: '1em',
   fontWeight: "bolder",
   fontSize: "1em",
   color: '#f1f1f1',
@@ -194,10 +197,10 @@ const mainTitleMobile = {
 };
 const shapeStyleMobile = {
   position: "absolute",
-  top: `1em`,
+  top: `0em`,
   left: '0em',
-  width: "150px",
-  height: "150px",
+  width: "100px",
+  height: "100px",
   zIndex: "99",
 };
 const skillsBox = {
@@ -210,9 +213,7 @@ const skillsBox = {
   "& :nth-child(even)": {
     justifyContent: 'flex-end'
   },
-  "& :nth-child(odd)": {
-    paddingLeft: '.5em'
-  }
+ 
 }
 
 const skillBox = {
@@ -223,6 +224,7 @@ const skillBox = {
   height: "200px",
   marginBottom: "2em",
   width: '100%',
+  
 };
 
 const skillInfo = {
@@ -257,11 +259,11 @@ const more = {
 const skillBoxMobile = {
   display: {xs: 'block', md: 'none', lg: 'none', xl: 'none'},
   width: { xs: '80%', md: '96%', lg: '96%', xl: '96%'},
+  position: 'relative',
 }
 
 
 const skills = [
-  
   {
     id: "2",
     img: `${UX}`,
