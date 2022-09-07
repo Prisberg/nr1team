@@ -33,14 +33,11 @@ const UxDesign = () => {
           </Box>
         </Box>
         <Box sx={skillInfo}>
-        <Typography sx={skillInfoText}>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Nam hic blanditiis tenetur delectus voluptatibus facilis aliquam vitae corrupti modi saepe consequuntur, 
-            accusamus ducimus, natus enim impedit, sit at cum. Qui nulla quidem aspernatur maiores tenetur temporibus magnam amet! Sint quibusdam corporis ab 
-            exercitationem alias eaque aliquid porro error ullam sequi?
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Nam hic blanditiis tenetur delectus voluptatibus facilis aliquam vitae corrupti modi saepe consequuntur, 
-            accusamus ducimus, natus enim impedit, sit at cum. Qui nulla quidem aspernatur maiores tenetur temporibus magnam amet! Sint quibusdam corporis ab 
-            exercitationem alias eaque aliquid porro error ullam sequi?
+          <Typography sx={skillInfoText}>
+            What UX Designers Do Goes Beyond UI Design? <br />
+            “User Experience Design” is often used interchangeably with terms such as “User Interface Design” and “Usability.” 
+            However, while usability and user interface (UI) design are important aspects of UX design, they are subsets of it.
+            A UX designer is concerned with the entire process of acquiring and integrating a product, including aspects of branding, design, usability and function. It’s a story that begins before the device is even in the user’s hands
           </Typography>
         </Box>
       </Box>
@@ -60,15 +57,16 @@ const innerBox = {
   marginTop: { xs: '2em', md: '1em', lg: '1em', xl: '1em'},
   display: 'flex',
   justifyContent: 'center',
+  alignItems: 'center',
   flexDirection: 'column',
 
 }
 const skillProjects = {
   display: 'flex',
-  alignItems:{ xs: 'center', md: 'center', lg: 'center', xl: 'center'},
+  alignItems:'center',
   justifyContent: 'center',
-  width:{ xs: '375px', md: '800px', lg: '1226px', xl: '1226px'},
-  flexWrap: { xs: 'wrap', md: 'wrap', lg: 'wrap', xl: 'wrap'},
+  width:{ xs: '375px', md: '800px', lg: '1000px', xl: '1300px'},
+  flexWrap: 'wrap',
   marginTop: '2em',
   flexDirection: { xs: 'column', md: 'row', lg: 'row'},
   "@media (max-width: 320px)": {
@@ -78,14 +76,14 @@ const skillProjects = {
 const  projectBox = {
  flex: '50%',
  marginTop: '2em',
- width:{ xs: '200px', md: '300px', lg: '300px', xl: '300px'},
+ width:{ xs: '300px', md: '300px', lg: '300px', xl: '300px'},
  borderRadius: '2em',
 }
 const skillInfo = {
-  width:{ xs: '360px', md: '500px', lg: '500px', xl: '970px'},
+  width:{ xs: '360px', md: '800px', lg: '1000px', xl: '1300px'},
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  alignItems: 'flex-start',
+  justifyContent: 'flex-start',
   marginTop: '3em',
   "@media (max-width: 320px)": {
     width: "300px",

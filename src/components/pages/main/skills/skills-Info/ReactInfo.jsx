@@ -35,14 +35,12 @@ const UxDesign = () => {
           </Box>
         </Box>
         <Box sx={skillInfo}>
-        <Typography sx={skillInfoText}>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Nam hic blanditiis tenetur delectus voluptatibus facilis aliquam vitae corrupti modi saepe consequuntur, 
-            accusamus ducimus, natus enim impedit, sit at cum. Qui nulla quidem aspernatur maiores tenetur temporibus magnam amet! Sint quibusdam corporis ab 
-            exercitationem alias eaque aliquid porro error ullam sequi?
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Nam hic blanditiis tenetur delectus voluptatibus facilis aliquam vitae corrupti modi saepe consequuntur, 
-            accusamus ducimus, natus enim impedit, sit at cum. Qui nulla quidem aspernatur maiores tenetur temporibus magnam amet! Sint quibusdam corporis ab 
-            exercitationem alias eaque aliquid porro error ullam sequi?
+          <Typography sx={skillInfoText}>
+          React is a JavaScript library that helps developers to build user interfaces – the things you interact with on websites. 
+          It has become popular because of its simplicity and flexibility and is used by companies like Facebook, Instagram and Airbnb.
+          To avoid writing time consuming repetitive functions in JavaScript you can use different libraries, i.e. pre-written JavaScript code. 
+          React is one of many libraries and it’s completely frontend and specializes in things that the user interacts with when they’re using a website. 
+          This could be buttons, search bars and menus.
           </Typography>
         </Box>
       </Box>
@@ -62,15 +60,16 @@ const innerBox = {
   marginTop: { xs: '2em', md: '1em', lg: '1em', xl: '1em'},
   display: 'flex',
   justifyContent: 'center',
+  alignItems: 'center',
   flexDirection: 'column',
 
 }
 const skillProjects = {
   display: 'flex',
-  alignItems:{ xs: 'center', md: 'center', lg: 'center', xl: 'center'},
+  alignItems:'center',
   justifyContent: 'center',
-  width:{ xs: '375px', md: '800px', lg: '1226px', xl: '1226px'},
-  flexWrap: { xs: 'wrap', md: 'wrap', lg: 'wrap', xl: 'wrap'},
+  width:{ xs: '375px', md: '800px', lg: '1000px', xl: '1300px'},
+  flexWrap: 'wrap',
   marginTop: '2em',
   flexDirection: { xs: 'column', md: 'row', lg: 'row'},
   "@media (max-width: 320px)": {
@@ -80,14 +79,14 @@ const skillProjects = {
 const  projectBox = {
  flex: '50%',
  marginTop: '2em',
- width:{ xs: '200px', md: '300px', lg: '300px', xl: '300px'},
+ width:{ xs: '300px', md: '300px', lg: '300px', xl: '300px'},
  borderRadius: '2em',
 }
 const skillInfo = {
-  width:{ xs: '360px', md: '500px', lg: '500px', xl: '970px'},
+  width:{ xs: '360px', md: '800px', lg: '1000px', xl: '1300px'},
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  alignItems: 'flex-start',
+  justifyContent: 'flex-start',
   marginTop: '3em',
   "@media (max-width: 320px)": {
     width: "300px",

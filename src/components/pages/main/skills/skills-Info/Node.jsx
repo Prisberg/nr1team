@@ -35,15 +35,15 @@ const UxDesign = () => {
           </Box>
         </Box>
         <Box sx={skillInfo}>
-        <Typography sx={skillInfoText}>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Nam hic blanditiis tenetur delectus voluptatibus facilis aliquam vitae corrupti modi saepe consequuntur, 
-            accusamus ducimus, natus enim impedit, sit at cum. Qui nulla quidem aspernatur maiores tenetur temporibus magnam amet! Sint quibusdam corporis ab 
-            exercitationem alias eaque aliquid porro error ullam sequi?
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Nam hic blanditiis tenetur delectus voluptatibus facilis aliquam vitae corrupti modi saepe consequuntur, 
-            accusamus ducimus, natus enim impedit, sit at cum. Qui nulla quidem aspernatur maiores tenetur temporibus magnam amet! Sint quibusdam corporis ab 
-            exercitationem alias eaque aliquid porro error ullam sequi?
-          </Typography>
+        <Typography sx={skillInfoText}>
+          Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!
+          Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. This allows Node.js to be very performant.
+          A Node.js app runs in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms,
+          making blocking behavior the exception rather than the norm.
+          When Node.js performs an I/O operation, like reading from the network, accessing a database or the filesystem, 
+          instead of blocking the thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back.
+          This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing thread concurrency, which could be a significant source of bugs.
+        </Typography>
         </Box>
       </Box>
     </Box>
@@ -62,15 +62,16 @@ const innerBox = {
   marginTop: { xs: '2em', md: '1em', lg: '1em', xl: '1em'},
   display: 'flex',
   justifyContent: 'center',
+  alignItems: 'center',
   flexDirection: 'column',
 
 }
 const skillProjects = {
   display: 'flex',
-  alignItems:{ xs: 'center', md: 'center', lg: 'center', xl: 'center'},
+  alignItems:'center',
   justifyContent: 'center',
-  width:{ xs: '375px', md: '800px', lg: '1226px', xl: '1226px'},
-  flexWrap: { xs: 'wrap', md: 'wrap', lg: 'wrap', xl: 'wrap'},
+  width:{ xs: '375px', md: '800px', lg: '1000px', xl: '1300px'},
+  flexWrap: 'wrap',
   marginTop: '2em',
   flexDirection: { xs: 'column', md: 'row', lg: 'row'},
   "@media (max-width: 320px)": {
@@ -80,14 +81,14 @@ const skillProjects = {
 const  projectBox = {
  flex: '50%',
  marginTop: '2em',
- width:{ xs: '200px', md: '300px', lg: '300px', xl: '300px'},
+ width:{ xs: '300px', md: '300px', lg: '300px', xl: '300px'},
  borderRadius: '2em',
 }
 const skillInfo = {
-  width:{ xs: '360px', md: '500px', lg: '500px', xl: '970px'},
+  width:{ xs: '360px', md: '800px', lg: '1000px', xl: '1300px'},
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  alignItems: 'flex-start',
+  justifyContent: 'flex-start',
   marginTop: '3em',
   "@media (max-width: 320px)": {
     width: "300px",
@@ -116,5 +117,4 @@ const imgStyling = {
     height: "600px",
   },
 };
-
 export default UxDesign
