@@ -23,6 +23,8 @@ function Footer() {
     <Box
       sx={{
         backgroundColor: "#000E1A",
+        display: "flex",
+        justifyContent: "center",
       }}
     >
       <Box
@@ -32,6 +34,7 @@ function Footer() {
           flexWrap: "wrap",
           mt: "2rem",
           mb: "3rem",
+          maxWidth: "100%",
         }}
       >
         <iframe
