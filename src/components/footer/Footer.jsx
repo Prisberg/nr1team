@@ -3,6 +3,7 @@ import React from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import { useNavigate } from "react-router-dom";
 
 const mapstyling = {
   border: "0",
@@ -11,6 +12,8 @@ const mapstyling = {
 };
 
 function Footer() {
+  const navigate = useNavigate();
+
   return (
     <Box
       sx={{
@@ -70,7 +73,10 @@ function Footer() {
               p: "2rem",
             }}
           >
-            <Button sx={{ backgroundColor: "#A51D57", color: "white" }}>
+            <Button
+              sx={{ backgroundColor: "#A51D57", color: "white" }}
+              onClick={() => navigate("/contact")}
+            >
               Contact
             </Button>
 
