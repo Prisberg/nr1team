@@ -154,7 +154,7 @@ function NavBar() {
               Contact
             </Button>
             {loggedIn ? (
-              <Button onClick={logOut} color="inherit">
+              <Button sx={font} onClick={logOut} color="inherit">
                 Log out
               </Button>
             ) : (
