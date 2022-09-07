@@ -11,14 +11,13 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { usePortfolioContext } from "../../utils/PortfolioContext";
 import { Alert, Snackbar } from "@mui/material";
-import { useRef } from "react";
 import icon from "../../assets/images/icon.svg";
 
-const pages = ["Home", "Cases", "Team", "Contact", "Login"];
+// const pages = ["Home", "Team", "Skills", "Cases", "Contact", "Login"];
 
 const Hamburgermenu = {
   display: "none",
-  "@media (max-width: 730px)": {
+  "@media (max-width: 750px)": {
     display: "flex",
   },
   mr: "0.5rem",
@@ -40,7 +39,7 @@ const font = {
 
 const Nav = {
   display: "flex",
-  "@media (max-width: 730px)": {
+  "@media (max-width: 750px)": {
     display: "none",
   },
   mr: "2rem",
@@ -51,7 +50,6 @@ function NavBar() {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [open, setOpen] = useState(false);
-  const titleRef = useRef();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -81,11 +79,14 @@ function NavBar() {
         flexGrow: 1,
         backgroundColor: "transparent",
         zIndex: "100",
+        display: "flex",
+        justifyContent: "center",
       }}
     >
       <AppBar
         sx={{
           mt: "1.5rem",
+          maxWidth: "2000px",
           flexGrow: 1,
           backgroundColor: "transparent",
           color: "#F1F1F1",
@@ -128,17 +129,23 @@ function NavBar() {
             <Button sx={font} color="inherit" onClick={() => navigate("/")}>
               Home
             </Button>
+            <Button onClick={() => navigate("/team")} sx={font} color="inherit">
+              Team
+            </Button>
             <Button
+              onClick={() => navigate("/skills")}
               sx={font}
+              color="inherit"
+            >
+              Skills
+            </Button>
+            <Button
               onClick={() => navigate("/cases")}
+              sx={font}
               color="inherit"
             >
               Cases
             </Button>
-            <Button sx={font} onClick={() => navigate("/team")} color="inherit">
-              Team
-            </Button>
-
             <Button
               sx={font}
               onClick={() => navigate("/contact")}
@@ -174,6 +181,7 @@ function NavBar() {
               }}
             />
           </IconButton>
+
           <Menu
             disableScrollLock={true}
             id="menu-appbar"
@@ -198,8 +206,6 @@ function NavBar() {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                overFlow: "scroll",
-                p: "0",
               }}
               onClick={handleCloseNavMenu}
             >
@@ -208,27 +214,30 @@ function NavBar() {
                 onClick={() => navigate("/")}
                 textAlign="center"
               >
-                {pages[0]}
+                Home
               </Button>
+
               <Button
+                onClick={() => navigate("/team")}
                 color="inherit"
-                onClick={() => navigate("/cases")}
                 textAlign="center"
               >
-                {pages[1]}
+                Team
               </Button>
-              <Button color="inherit" onClick={() => navigate("/team")}>
-                {pages[2]}
+
+              <Button onClick={() => navigate("/skills")} color="inherit">
+                Skills
               </Button>
+
               <Button color="inherit" onClick={() => navigate("/contact")}>
-                {pages[3]}
+                Contact
               </Button>
               <Button
+                onClick={() => navigate("/login")}
                 color="inherit"
-                onClick={() => navigate("/about")}
                 textAlign="center"
               >
-                {pages[4]}
+                Login
               </Button>
             </MenuItem>
           </Menu>
