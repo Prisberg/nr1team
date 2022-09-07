@@ -266,7 +266,7 @@ const skills = [
     imgM: `${UXM}`,
     title: "UX Design",
     url: "/UxDesign",
-    dis: "Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. ",
+    dis: "User experience (UX) design is the process design teams use to create products that provide meaningful and relevant experiences to users. UX design involves the design of the entire process of acquiring and integrating the product, including aspects of branding, design, usability and function.. ",
   },
   {
     id: "3",
@@ -274,7 +274,7 @@ const skills = [
     imgM: ` ${JSM}`,
     title: "JavaScript",
     url: "/JavaScript",
-    dis: "Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. ",
+    dis: "Often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS, 98% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on users' devices.. ",
   },
   {
     id: "4",
@@ -282,7 +282,7 @@ const skills = [
     imgM: `${ReactImgM}`,
     title: "React",
     url: "/ReactInfo",
-    dis: "Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. ",
+    dis: "React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library.for building user interfaces based on UI components. It is maintained by Meta (formerly Facebook) and a community of individual developers and companies. ",
   },
   {
     id: "5",
@@ -290,7 +290,7 @@ const skills = [
     imgM: `${nodeM}`,
     title: "nodJS",
     url: "/Node",
-    dis: "Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. ",
+    dis: "Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!.Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. This allows Node.js to be very performant. ",
   },
   {
     id: "6",
@@ -298,6 +298,6 @@ const skills = [
     imgM: `${MongoM}`,
     title: "MongoDB",
     url: "/Mongo",
-    dis: "Lorem  ipsum dolor sit amet, consectetur adipiscing elit. A turpis eget tincidunt ac, magna pellentesque feugiat sit. Enim ac euismod eget praesent dui nec tristique est dui. Mi risus morbi platea accumsan risus luctus in mauris, lorem. ",
+    dis: "MongoDB is a document-oriented NoSQL database used for high volume data storage. Instead of using tables and rows as in the traditional relational databases, MongoDB makes use of collections and documents. ",
   },
 ];

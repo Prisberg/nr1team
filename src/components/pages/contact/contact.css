@@ -1,5 +1,5 @@
 html {
-  background: #000E1A;
+  background: #000e1a;
 }
 
 div.contact-main {
@@ -7,7 +7,6 @@ div.contact-main {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 90vh;
   margin: 20px;
 }
 
@@ -20,12 +19,11 @@ div.contact-bg {
   border-radius: 20px;
   justify-content: center;
   width: 50vw;
-  padding:40px;
+  padding: 40px;
   max-width: 1440px;
   max-height: 800px;
   filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.25));
   backdrop-filter: blur(7px);
-
 }
 
 h1.contact-title {
@@ -36,7 +34,6 @@ h1.contact-title {
   color: white;
   margin-bottom: 10px;
   text-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25);
-
 }
 
 @media only screen and (max-width: 640px) {
@@ -49,7 +46,7 @@ h1.contact-title {
     justify-content: space-around;
     width: 90vw;
     height: 80vh;
-    padding:20px;
+    padding: 20px;
   }
 
   button.contact {
@@ -70,7 +67,7 @@ form {
 
 .input {
   margin-top: 20px;
-  width:100%;
+  width: 100%;
 }
 
 .button {
