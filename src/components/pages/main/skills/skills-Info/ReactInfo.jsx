@@ -1,7 +1,10 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material';
 import './skillInfo.css'
-import skillTest from '../Skill-imgs/skillTest.png'
+import volvo from "../../../../../assets/images/volvo.png";
+import design from "../../../../../assets/images/design.jpg";
+import apple from "../../../../../assets/images/apple.png";
+import poc from "../../../../../assets/images/poc.png";
 import headerImg from '../../../../../assets/images/skillsInfo.png'
 
 const UxDesign = () => {
@@ -17,16 +20,16 @@ const UxDesign = () => {
         </Box>
         <Box sx={skillProjects}  className='skillProjects'>
           <Box sx={projectBox}  className='skillBox'>
-          <img src={skillTest} alt=""/>
+          <img src={volvo} alt=""/>
           </Box>
           <Box sx={projectBox}  className='skillBox'>
-          <img src={skillTest} alt="" />
+          <img src={design} alt="" />
           </Box>
           <Box sx={projectBox}  className='skillBox'>
-          <img src={skillTest} alt="" />
+          <img src={apple} alt="" />
           </Box>
           <Box sx={projectBox}  className='skillBox'>
-          <img src={skillTest} alt="" />
+          <img src={poc} alt="" />
           </Box>
         </Box>
         <Box sx={skillInfo}>
