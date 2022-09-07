@@ -9,7 +9,7 @@ function Contact() {
     src={greetingimg}
     alt="greeting"
     style={{
-      height: "800px",
+      height: "1000px",
       width: "100%",
       objectFit: "cover",
       position: "absolute",
