@@ -31,7 +31,7 @@ function Register() {
     }
 
     return (
-        <>
+        <Box sx={alignBox}>
             <Box sx={mainBox}></Box>
             <form
                 style={formStyle}
@@ -87,11 +87,17 @@ function Register() {
                     </Box>
                 </Box>
             </form>
-        </>
+        </Box>
     )
 }
 
 export default Register;
+
+const alignBox = {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center'
+}
 
 const buttonStyle = {
     background: { xs: '#4C0B26', sm: '#C62368' },

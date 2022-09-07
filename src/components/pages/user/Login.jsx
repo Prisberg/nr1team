@@ -30,7 +30,7 @@ function Login() {
     }
 
     return (
-        <>
+        <Box sx={alignBox}>
             <Box sx={mainBox}></Box>
             <form
                 style={formStyle}
@@ -75,11 +75,17 @@ function Login() {
                     </Alert>
                 </Snackbar>
             </form>
-        </>
+        </Box>
     )
 }
 
 export default Login;
+
+const alignBox = {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center'
+}
 
 const buttonStyle = {
     background: { xs: '#4C0B26', sm: '#C62368' },
