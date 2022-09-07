@@ -82,3 +82,7 @@ form {
 .css-oxk6bc-MuiButtonBase-root-MuiButton-root {
   width: 100%;
 }
+
+.hiddenBtn {
+  display: none;
+}
