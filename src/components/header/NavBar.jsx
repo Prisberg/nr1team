@@ -232,13 +232,19 @@ function NavBar() {
               <Button color="inherit" onClick={() => navigate("/contact")}>
                 Contact
               </Button>
-              <Button
-                onClick={() => navigate("/login")}
-                color="inherit"
-                textAlign="center"
-              >
-                Login
-              </Button>
+              {loggedIn ? (
+                <Button sx={font} onClick={logOut} color="inherit">
+                  Log out
+                </Button>
+              ) : (
+                <Button
+                  sx={font}
+                  onClick={() => navigate("/login")}
+                  color="inherit"
+                >
+                  Login
+                </Button>
+              )}
             </MenuItem>
           </Menu>
         </Toolbar>
