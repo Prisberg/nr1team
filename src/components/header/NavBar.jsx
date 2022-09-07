@@ -233,7 +233,7 @@ function NavBar() {
                 Contact
               </Button>
               {loggedIn ? (
-                <Button sx={font} onClick={logOut} color="inherit">
+                <Button onClick={logOut} color="inherit">
                   Log out
                 </Button>
               ) : (
