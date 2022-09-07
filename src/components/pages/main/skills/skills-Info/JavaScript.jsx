@@ -1,13 +1,18 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material';
 import './skillInfo.css'
-import skillTest from '../Skill-imgs/skillTest.png'
+import volvo from "../../../../../assets/images/volvo.png";
+import design from "../../../../../assets/images/design.jpg";
+import apple from "../../../../../assets/images/apple.png";
+import poc from "../../../../../assets/images/poc.png";
+
 import headerImg from '../../../../../assets/images/skillsInfo.png'
 
 const UxDesign = () => {
   return (
     <Box sx={mainBox}  className='main-Box'>
-              <img src={headerImg} alt="" style={{width: '100%', objectFit:'cover', position: 'absolute', top: '0em', zIndex: '0' }} />
+
+              <img src={headerImg} alt="" style={imgStyling} />
 
       <Box sx={innerBox}>
         <Box  >
@@ -17,16 +22,16 @@ const UxDesign = () => {
         </Box>
         <Box sx={skillProjects}  className='skillProjects'>
           <Box sx={projectBox}  className='skillBox'>
-          <img src={skillTest} alt=""/>
+          <img src={volvo} alt=""/>
           </Box>
           <Box sx={projectBox}  className='skillBox'>
-          <img src={skillTest} alt="" />
+          <img src={design} alt="" />
           </Box>
           <Box sx={projectBox}  className='skillBox'>
-          <img src={skillTest} alt="" />
+          <img src={apple} alt="" />
           </Box>
           <Box sx={projectBox}  className='skillBox'>
-          <img src={skillTest} alt="" />
+          <img src={poc} alt="" />
           </Box>
         </Box>
         <Box sx={skillInfo}>
@@ -47,21 +52,19 @@ const UxDesign = () => {
 const mainBox = {
   width:{ xs: '100%', md: '100%', lg: '100%', xl: '100%'},
   height:{ xs: '100%', md: '1500px', llg: '1500px', xl: '1500px'},
-  backgroundColor: '#001220',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   color: '#f1f1f1',
+  zIndex: '10'
 }
 const innerBox = {
-  // padding: '2em',
-  marginTop: { xs: '2em', md: '0', lg: '0', xl: '15em'},
-  // paddingLeft: { xs: '0em', md: '0em', lg: '15em', xl: '15em'},
-  zIndex: '5',
+  marginTop: { xs: '2em', md: '1em', lg: '1em', xl: '1em'},
   display: 'flex',
-  alignItems: 'center',
+  // alignItems: 'center',
   justifyContent: 'center',
-  flexDirection: 'column'
+  flexDirection: 'column',
+
 }
 const skillProjects = {
   display: 'flex',
@@ -93,4 +96,20 @@ const skillInfoText = {
   fontSize: '1.3em',
   paddingLeft: {xs: '20px', md: '0px', lg: '0px', xl: '0px'}
 }
+
+const imgStyling = {
+  height: "550px",
+  width: "100%",
+  objectFit: "cover",
+  position: "absolute",
+  top: "0px",
+  zIndex: "-1",
+  "@media (max-width: 450px)": {
+    height: "400px",
+  },
+  "@media (max-width: 360px)": {
+    height: "600px",
+  },
+};
+
 export default UxDesign
