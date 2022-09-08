@@ -16,7 +16,7 @@ export const DialogMui = () => {
   return (
     <div>
       <Dialog aria-labelledby="dialog-title" aira-aria-describedby="dialog-desc" open={open}
-      onClose={() => setOpen(false)}>
+        onClose={() => setOpen(false)}>
         <DialogTitle id="dialog-title">Thank you</DialogTitle>
         <DialogContent>
           <DialogContentText id="dialog-desc">
@@ -24,7 +24,17 @@ export const DialogMui = () => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button autofocus onClick={() => setOpen(false)}>Okay</Button>
+          <Button
+            sx={{
+              background: '#C62368',
+              fontSize: "1.2rem",
+              color: 'white',
+              "&:hover": {
+                background: '#4C0B26',
+              },
+            }}
+            autofocus
+            onClick={() => setOpen(false)}>Okay</Button>
         </DialogActions>
       </Dialog>
     </div>

@@ -32,7 +32,7 @@ function Register() {
 
     return (
         <Box sx={alignBox}>
-            <Box sx={mainBox}></Box>
+            <Box component="img" src={greetingImg} sx={imgStyling}></Box>
             <form
                 style={formStyle}
                 onSubmit={(e) => handleSubmit(e)}>
@@ -100,10 +100,10 @@ const alignBox = {
 }
 
 const buttonStyle = {
-    background: { xs: '#4C0B26', sm: '#C62368' },
+    background: '#C62368',
     fontSize: "1.2rem",
     "&:hover": {
-        background: { xs: '#C62368', sm: '#4C0B26' },
+        background: '#4C0B26',
     },
 }
 
@@ -119,19 +119,20 @@ const textInputStyle = {
     borderRadius: '0.5rem'
 }
 
-const mainBox = {
-    top: '0',
-    zIndex: '-1',
-    position: 'absolute',
-    height: '800px',
-    backgroundColor: '#001220',
-    backgroundImage: `url("${greetingImg}")`,
-    backgroundPosition: 'right',
-    backgroundRepeat: 'no-repeat',
-    width: '100%',
-    maxWidth: '1920px',
-    margin: '0 auto'
-}
+const imgStyling = {
+    height: "790px",
+    width: "100%",
+    objectFit: "cover",
+    position: "absolute",
+    top: "0px",
+    zIndex: "-1",
+    "@media (max-width: 450px)": {
+        height: "500px",
+    },
+    "@media (max-width: 360px)": {
+        height: "800px",
+    },
+};
 
 const formStyle = {
     display: 'flex',
